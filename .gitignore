@@ -1,3 +1,7 @@
 main
 *.o
 **/*.o
+parser.cpp
+parser.h
+symbol.cpp
+symbol.h
