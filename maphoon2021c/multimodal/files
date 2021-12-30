@@ -1,0 +1,13 @@
+
+multimodal
+
+multimodal.cpp
+tokenizer.cpp
+../filereader.cpp
+symbol.cpp
+../lexing/stateset.cpp
+../lexing/partition.cpp
+form.cpp
+agent.cpp
+parser.cpp
+

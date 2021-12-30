@@ -1,0 +1,1133 @@
+filereader( grammar.m, 257, 0 ) :  (end of file)
+lookahead: eof/0
+
+symbolcodebuilder:
+
+code for .h:
+from file grammar.m, line 46 :
+   46 :    #include "varstore.h" 
+   47 :    #include <math.h> 
+   48 :    #include <vector> 
+   49 :   
+   50 :   struct location 
+   51 :   {
+   52 :      const std::string* filename; 
+   53 :      long unsigned int line;
+   54 :      long unsigned int column;
+   55 :   
+   56 :      location( const std::string* filename,
+   57 :                long unsigned int line,
+   58 :                long unsigned int column )
+   59 :         : filename( filename ),
+   60 :           line( line ),
+   61 :           column( column )
+   62 :      { }
+   63 :   
+   64 :   };
+   65 :   
+
+
+namespace:
+   
+
+infotype: location
+
+code for .cpp:
+from file grammar.m, line 73 :
+   73 :    
+   74 :   {namespace} {
+   75 :   
+   76 :      {std}::{ostream}& 
+   77 :      {operator} << ( {std}::{ostream}& {out}, 
+   78 :                    {const} {location}& {loc} )
+   79 :      {
+   80 :         {out} << "from file " << * ( {loc}. {filename} )  << " at position " <<
+   81 :               {loc}. {line} << "/" << {loc}. {column}; 
+   82 :         {return} {out};
+   83 :      }
+   84 :   
+   85 :      {std}::{ostream}& {operator} << ( {std}::{ostream}& {out},
+   86 :                                  {const} {std}::{vector}< {double} > & {vect} )
+   87 :      {
+   88 :         {out} << "( ";
+   89 :         {for}( {size_t} {i} = 0; {i} != {vect}. {size}( ); ++ {i} )
+   90 :         {
+   91 :            {if}( {i} != 0 ) {out} << ", ";
+   92 :            {out} << {vect}[{i}];
+   93 :         }
+   94 :         {out} << ")";
+   95 :         {return} {out};
+   96 :      }
+   97 :   }
+
+
+declared attributes:
+   COMMENT : void
+   Arguments : std::vector<double>
+   E : double
+   RPAR : void
+   Command : void
+   LPAR : void
+   G : double
+   EOF : void
+   DIVIDES : void
+   Session : void
+   SCANERROR : std::string
+   WHITESPACE : void
+   IDENTIFIER : std::string
+   SEMICOLON : void
+   EMPTY : void
+   BECOMES : void
+   H : double
+   DOUBLE : double
+   TIMES : void
+   COMMA : void
+   MINUS : void
+   F : double
+   FACTORIAL : void
+   PLUS : void
+   MODULO : void
+
+
+parsercodebuilder:
+
+namespace =      
+source =          from file , line 121 :
+   121 :    {tokenizing}::{readsymbol}( {read} ); 
+
+parameters:
+   memory :       varstore
+   errorlog :       std::vector<std::string>
+   read :       filereader
+
+code for .h:
+from file grammar.m, line 99 :
+   99 :    #include "varstore.h" 
+
+
+code for .cpp:
+from file grammar.m, line 101 :
+   101 :   
+   102 :   {namespace} {
+   103 :      {double} {fact}( {unsigned} {int} {n} )
+   104 :      {
+   105 :         {double} {res} = 1.0;
+   106 :         {while}( {n} )
+   107 :         {
+   108 :            {res} *= {n};
+   109 :            -- {n};
+   110 :         }
+   111 :         {return} {res};
+   112 :      }
+   113 :   }
+
+
+Start Symbols with their Lookahead Sets:
+   E : { SEMICOLON }
+   Session : { EOF }
+
+
+Rules:
+
+(0)   Session  =>  Session Command
+(1)   Session  =>  
+(2)   Command  =>  E SEMICOLON
+(3)   Command  =>  IDENTIFIER BECOMES E SEMICOLON
+(4)   Command  =>  _recover SEMICOLON
+(5)   E  =>  E PLUS F
+(6)   E  =>  E MINUS F
+(7)   E  =>  F
+(8)   F  =>  F TIMES G
+(9)   F  =>  F DIVIDES G
+(10)   F  =>  F MODULO G
+(11)   F  =>  G
+(12)   E  =>  DOUBLE
+(13)   G  =>  MINUS G
+(14)   G  =>  PLUS G
+(15)   G  =>  H
+(16)   H  =>  H FACTORIAL
+(17)   H  =>  LPAR E RPAR
+(18)   H  =>  IDENTIFIER
+(19)   H  =>  DOUBLE
+(20)   H  =>  IDENTIFIER LPAR Arguments RPAR
+(21)   Arguments  =>  E
+(22)   Arguments  =>  Arguments COMMA E
+
+
+
+#2: reduction( e : 0 )
+from file grammar.m, line 132 :
+   132 :   
+   133 :      {if}( {errorlog}. {size}( ))
+   134 :      {
+   135 :         {std}::{cout} << "Errors:\n";
+   136 :         {for}( {const} {auto}& {err} : {errorlog} )
+   137 :            {std}::{cout} << {err} << "\n";
+   138 :         {errorlog}. {clear}( ); 
+   139 :      }
+   140 :      {else}
+   141 :         {std}::{cout} << "Result is " << {e} << "\n"; 
+
+
+#3: reduction( e : 2, id : 0 )
+from file grammar.m, line 146 :
+   146 :   
+   147 :      {if}( {errorlog}. {empty}( )) 
+   148 :      {
+   149 :         {std}::{cout} << " Assigning: " << {id} << " := " << {e} << "\n";
+   150 :         {memory}. {assign}( {id}, {e} ); 
+   151 :      }
+   152 :      {else}
+   153 :      {
+   154 :         {std}::{cout} << "Errors:\n";
+   155 :         {for}( {const} {auto}& {err} : {errorlog} )
+   156 :            {std}::{cout} << {err} << "\n";
+   157 :         {errorlog}. {clear}( ); 
+   158 :      }
+
+
+#4: reduction
+from file grammar.m, line 163 :
+   163 :   
+   164 :      {std}::{cout} << "recovered from syntax error\n\n";
+
+
+#5: reduction( f : 2, e : 0 )
+from file grammar.m, line 168 :
+   168 :    {return} {e} + {f}; 
+
+#6: reduction( f : 2, e : 0 )
+from file grammar.m, line 169 :
+   169 :    {return} {e} - {f}; 
+
+#7: reduction( f : 0 )
+from file grammar.m, line 170 :
+   170 :    {return} {f}; 
+
+#8: reduction( g : 2, f : 0 )
+from file grammar.m, line 173 :
+   173 :    {return} {f} * {g}; 
+
+#9: reduction( g : 2, f : 0 )
+from file grammar.m, line 176 :
+   176 :   
+   177 :      {if}( {g} == 0.0 ) 
+   178 :      {
+   179 :         {errorlog}. {push_back}( "division by zero" ); 
+   180 :            {g} = 1.0;   // invent a value. 
+   181 :      }
+   182 :      {return} {f} / {g};  
+
+
+#10: reduction( g : 2, f : 0 )
+? from file grammar.m, line 187 :
+   187 :   
+   188 :      {return} {g} != 0.0;
+
+
+from file grammar.m, line 191 :
+   191 :   
+   192 :      {if}( {g} == 0.0 )
+   193 :      {
+   194 :         {errorlog}. {push_back}( "division by zero" );
+   195 :         {g} = 1.0;
+   196 :      }
+   197 :       
+   198 :      {return} {f} - {g} * {floor}( {f} / {g} ); 
+
+
+#11: reduction( g : 0 )
+from file grammar.m, line 201 :
+   201 :    {return} {g}; 
+
+#12: reduction( d : 0 )
+? from file grammar.m, line 204 :
+   204 :    {return} {true}; 
+
+from file grammar.m, line 204 :
+   204 :    {return} {d}; 
+
+#13: reduction( g : 1 )
+from file grammar.m, line 206 :
+   206 :    {return} -{g}; 
+
+#14: reduction( g : 1 )
+from file grammar.m, line 207 :
+   207 :    {return} {g}; 
+
+#15: reduction( h : 0 )
+from file grammar.m, line 208 :
+   208 :    {return} {h}; 
+
+#16: reduction( h : 0 )
+from file grammar.m, line 212 :
+   212 :   
+   213 :      {unsigned} {int} {f} = {static_cast}< {unsigned} {int} >
+   214 :            ( {floor}( {h} + 0.0001 ));
+   215 :      {return} {fact}({f});  
+
+
+#17: reduction( e : 1 )
+from file grammar.m, line 218 :
+   218 :    {return} {e}; 
+
+#18: reduction( id : 0 )
+from file grammar.m, line 220 :
+   220 :   
+   221 :      {if}( {memory}. {contains}({id}))
+   222 :         {return} *{memory}. {lookup}({id});
+   223 :      {else}
+   224 :      {
+   225 :         {errorlog}. {push_back}( {std}::{string}( "variable " ) + {id} + 
+   226 :                              " is undefined " );
+   227 :         {return} 0.0;  
+   228 :      }
+
+
+#19: reduction( d : 0 )
+from file grammar.m, line 231 :
+   231 :    {return} {d}; 
+
+#20: reduction( args : 2, id : 0 )
+from file grammar.m, line 234 :
+   234 :    
+   235 :      {if}( {id} == "sin" && {args}. {size}( ) == 1 ) 
+   236 :         {return} {sin}( {args}[0] ); 
+   237 :   
+   238 :      {if}( {id} == "cos" && {args}. {size}( ) == 1 )
+   239 :         {return} {cos}( {args}[0] );
+   240 :   
+   241 :      {if}( {id} == "pow" && {args}. {size}( ) == 2 )
+   242 :      {
+   243 :         {return} {pow}( {args}[0], {args}[1] );
+   244 :      }
+   245 :   
+   246 :      {errorlog}. {push_back}( {std}::{string}( "unrecognized function " ) + {id} );
+   247 :      {return} 0.0;
+
+
+#21: reduction( e : 0 )
+from file grammar.m, line 252 :
+   252 :     {return} { {e} };   
+
+#22: reduction( e : 2, a : 0 )
+from file grammar.m, line 253 :
+   253 :    {a}. {push_back}({e}); {return} {a}; 
+
+
+input was read succesfully
+
+starting closure
+all states have been generated
+adding reductions
+ending closure
+after closure
+Parsetable:
+====================================
+
+Initial States:
+   Session : state 1
+   E : state 0
+
+
+state 0:
+   E =>  # E PLUS F  /  { SEMICOLON }
+   E =>  # E MINUS F  /  { SEMICOLON }
+   E =>  # F  /  { SEMICOLON }
+   E =>  # DOUBLE  /  { SEMICOLON }
+
+Shifts:
+   MINUS :  10
+   H :  9
+   PLUS :  8
+   F :  7
+   LPAR :  6
+   DOUBLE :  5
+   G :  4
+   IDENTIFIER :  3
+   E :  2
+
+
+state 1:
+   Session =>  # Session Command  /  { EOF }
+   Session =>  #  /  { BECOMES, TIMES, RPAR, E, F, FACTORIAL, PLUS, G, EOF, DIVIDES, IDENTIFIER, SEMICOLON, Command, LPAR, _recover, Arguments, MODULO, MINUS, COMMA, DOUBLE, H }
+
+Shifts:
+   Session :  11
+
+Reductions:
+   H :  1
+   DOUBLE :  1
+   COMMA :  1
+   MINUS :  1
+   MODULO :  1
+   Arguments :  1
+   _recover :  1
+   BECOMES :  1
+   TIMES :  1
+   RPAR :  1
+   E :  1
+   PLUS :  1
+   F :  1
+   FACTORIAL :  1
+   G :  1
+   EOF :  1
+   DIVIDES :  1
+   LPAR :  1
+   Command :  1
+   IDENTIFIER :  1
+   SEMICOLON :  1
+
+
+state 2:
+   E =>  E # PLUS F  /  { PLUS, MINUS, SEMICOLON }
+   E =>  E # MINUS F  /  { PLUS, MINUS, SEMICOLON }
+
+Shifts:
+   MINUS :  13
+   PLUS :  12
+
+
+state 3:
+   H =>  IDENTIFIER # LPAR Arguments RPAR  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+   H =>  IDENTIFIER #  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Shifts:
+   LPAR :  14
+
+Reductions:
+   MODULO :  18
+   FACTORIAL :  18
+   MINUS :  18
+   COMMA :  18
+   DIVIDES :  18
+   TIMES :  18
+   RPAR :  18
+   SEMICOLON :  18
+   PLUS :  18
+
+
+state 4:
+   F =>  G #  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Reductions:
+   SEMICOLON :  11
+   TIMES :  11
+   RPAR :  11
+   DIVIDES :  11
+   MODULO :  11
+   PLUS :  11
+   MINUS :  11
+   COMMA :  11
+
+
+state 5:
+   H =>  DOUBLE #  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+   E =>  DOUBLE #  /  { RPAR, PLUS, COMMA, MINUS, SEMICOLON }
+
+Reductions:
+   MODULO :  19
+   FACTORIAL :  19
+   MINUS :  12, 19
+   COMMA :  12, 19
+   DIVIDES :  19
+   TIMES :  19
+   RPAR :  12, 19
+   SEMICOLON :  12, 19
+   PLUS :  12, 19
+
+
+state 6:
+   H =>  LPAR # E RPAR  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Shifts:
+   MINUS :  10
+   H :  9
+   PLUS :  8
+   F :  7
+   LPAR :  6
+   DOUBLE :  5
+   G :  4
+   IDENTIFIER :  3
+   E :  15
+
+
+state 7:
+   F =>  F # TIMES G  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+   F =>  F # DIVIDES G  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+   F =>  F # MODULO G  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+   E =>  F #  /  { RPAR, PLUS, COMMA, MINUS, SEMICOLON }
+
+Shifts:
+   MODULO :  18
+   DIVIDES :  17
+   TIMES :  16
+
+Reductions:
+   SEMICOLON :  7
+   MINUS :  7
+   COMMA :  7
+   PLUS :  7
+   RPAR :  7
+
+
+state 8:
+   G =>  PLUS # G  /  { COMMA, MINUS, PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, MODULO }
+
+Shifts:
+   G :  20
+   DOUBLE :  19
+   LPAR :  6
+   PLUS :  8
+   H :  9
+   MINUS :  10
+   IDENTIFIER :  3
+
+
+state 9:
+   G =>  H #  /  { COMMA, MINUS, PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, MODULO }
+   H =>  H # FACTORIAL  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Shifts:
+   FACTORIAL :  21
+
+Reductions:
+   MODULO :  15
+   DIVIDES :  15
+   TIMES :  15
+   RPAR :  15
+   SEMICOLON :  15
+   PLUS :  15
+   MINUS :  15
+   COMMA :  15
+
+
+state 10:
+   G =>  MINUS # G  /  { COMMA, MINUS, PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, MODULO }
+
+Shifts:
+   G :  22
+   DOUBLE :  19
+   LPAR :  6
+   MINUS :  10
+   H :  9
+   PLUS :  8
+   IDENTIFIER :  3
+
+
+state 11:
+   Session =>  Session # Command  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, MINUS, COMMA, DOUBLE, H, PLUS, FACTORIAL, F, E, EOF, G, RPAR, TIMES, BECOMES }
+
+Shifts:
+   F :  7
+   PLUS :  8
+   G :  4
+   DOUBLE :  5
+   LPAR :  6
+   E :  26
+   H :  9
+   MINUS :  10
+   IDENTIFIER :  25
+   Command :  24
+   _recover :  23
+
+
+state 12:
+   E =>  E PLUS # F  /  { RPAR, PLUS, COMMA, MINUS, SEMICOLON }
+
+Shifts:
+   F :  27
+   PLUS :  8
+   IDENTIFIER :  3
+   G :  4
+   DOUBLE :  19
+   LPAR :  6
+   H :  9
+   MINUS :  10
+
+
+state 13:
+   E =>  E MINUS # F  /  { RPAR, PLUS, COMMA, MINUS, SEMICOLON }
+
+Shifts:
+   F :  28
+   PLUS :  8
+   DOUBLE :  19
+   G :  4
+   LPAR :  6
+   H :  9
+   MINUS :  10
+   IDENTIFIER :  3
+
+
+state 14:
+   H =>  IDENTIFIER LPAR # Arguments RPAR  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Shifts:
+   PLUS :  8
+   F :  7
+   H :  9
+   MINUS :  10
+   G :  4
+   LPAR :  6
+   DOUBLE :  5
+   E :  30
+   IDENTIFIER :  3
+   Arguments :  29
+
+
+state 15:
+   E =>  E # PLUS F  /  { MINUS, PLUS, RPAR }
+   H =>  LPAR E # RPAR  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+   E =>  E # MINUS F  /  { MINUS, PLUS, RPAR }
+
+Shifts:
+   MINUS :  13
+   RPAR :  31
+   PLUS :  12
+
+
+state 16:
+   F =>  F TIMES # G  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Shifts:
+   G :  32
+   DOUBLE :  19
+   LPAR :  6
+   H :  9
+   MINUS :  10
+   PLUS :  8
+   IDENTIFIER :  3
+
+
+state 17:
+   F =>  F DIVIDES # G  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Shifts:
+   G :  33
+   DOUBLE :  19
+   LPAR :  6
+   H :  9
+   MINUS :  10
+   PLUS :  8
+   IDENTIFIER :  3
+
+
+state 18:
+   F =>  F MODULO # G  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Shifts:
+   G :  34
+   DOUBLE :  19
+   LPAR :  6
+   H :  9
+   MINUS :  10
+   PLUS :  8
+   IDENTIFIER :  3
+
+
+state 19:
+   H =>  DOUBLE #  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Reductions:
+   MODULO :  19
+   FACTORIAL :  19
+   MINUS :  19
+   COMMA :  19
+   DIVIDES :  19
+   TIMES :  19
+   RPAR :  19
+   SEMICOLON :  19
+   PLUS :  19
+
+
+state 20:
+   G =>  PLUS G #  /  { COMMA, MINUS, PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, MODULO }
+
+Reductions:
+   MODULO :  14
+   DIVIDES :  14
+   TIMES :  14
+   RPAR :  14
+   SEMICOLON :  14
+   PLUS :  14
+   MINUS :  14
+   COMMA :  14
+
+
+state 21:
+   H =>  H FACTORIAL #  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Reductions:
+   MODULO :  16
+   FACTORIAL :  16
+   MINUS :  16
+   COMMA :  16
+   DIVIDES :  16
+   TIMES :  16
+   RPAR :  16
+   SEMICOLON :  16
+   PLUS :  16
+
+
+state 22:
+   G =>  MINUS G #  /  { COMMA, MINUS, PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, MODULO }
+
+Reductions:
+   MODULO :  13
+   DIVIDES :  13
+   TIMES :  13
+   RPAR :  13
+   SEMICOLON :  13
+   PLUS :  13
+   MINUS :  13
+   COMMA :  13
+
+
+state 23:
+   Command =>  _recover # SEMICOLON  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, BECOMES, TIMES, RPAR, G, EOF, E, PLUS, F, FACTORIAL, DOUBLE, H, COMMA, MINUS }
+
+Shifts:
+   SEMICOLON :  35
+
+
+state 24:
+   Session =>  Session Command #  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, MINUS, COMMA, DOUBLE, H, PLUS, FACTORIAL, F, E, EOF, G, RPAR, TIMES, BECOMES }
+
+Reductions:
+   BECOMES :  0
+   TIMES :  0
+   RPAR :  0
+   G :  0
+   EOF :  0
+   E :  0
+   F :  0
+   FACTORIAL :  0
+   IDENTIFIER :  0
+   SEMICOLON :  0
+   DIVIDES :  0
+   Command :  0
+   LPAR :  0
+   _recover :  0
+   Arguments :  0
+   MODULO :  0
+   MINUS :  0
+   COMMA :  0
+   DOUBLE :  0
+   H :  0
+   PLUS :  0
+
+
+state 25:
+   Command =>  IDENTIFIER # BECOMES E SEMICOLON  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, BECOMES, TIMES, RPAR, G, EOF, E, PLUS, F, FACTORIAL, DOUBLE, H, COMMA, MINUS }
+   H =>  IDENTIFIER # LPAR Arguments RPAR  /  { SEMICOLON, PLUS, TIMES, DIVIDES, MINUS, FACTORIAL, MODULO }
+   H =>  IDENTIFIER #  /  { SEMICOLON, PLUS, TIMES, DIVIDES, MINUS, FACTORIAL, MODULO }
+
+Shifts:
+   LPAR :  14
+   BECOMES :  36
+
+Reductions:
+   MODULO :  18
+   FACTORIAL :  18
+   MINUS :  18
+   DIVIDES :  18
+   TIMES :  18
+   PLUS :  18
+   SEMICOLON :  18
+
+
+state 26:
+   E =>  E # PLUS F  /  { MINUS, PLUS, SEMICOLON }
+   E =>  E # MINUS F  /  { MINUS, PLUS, SEMICOLON }
+   Command =>  E # SEMICOLON  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, BECOMES, TIMES, RPAR, G, EOF, E, PLUS, F, FACTORIAL, DOUBLE, H, COMMA, MINUS }
+
+Shifts:
+   SEMICOLON :  37
+   MINUS :  13
+   PLUS :  12
+
+
+state 27:
+   E =>  E PLUS F #  /  { RPAR, PLUS, COMMA, MINUS, SEMICOLON }
+   F =>  F # MODULO G  /  { PLUS, COMMA, MINUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+   F =>  F # DIVIDES G  /  { PLUS, COMMA, MINUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+   F =>  F # TIMES G  /  { PLUS, COMMA, MINUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Shifts:
+   TIMES :  16
+   DIVIDES :  17
+   MODULO :  18
+
+Reductions:
+   SEMICOLON :  5
+   MINUS :  5
+   COMMA :  5
+   PLUS :  5
+   RPAR :  5
+
+
+state 28:
+   E =>  E MINUS F #  /  { RPAR, PLUS, COMMA, MINUS, SEMICOLON }
+   F =>  F # MODULO G  /  { PLUS, COMMA, MINUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+   F =>  F # DIVIDES G  /  { PLUS, COMMA, MINUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+   F =>  F # TIMES G  /  { PLUS, COMMA, MINUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Shifts:
+   TIMES :  16
+   DIVIDES :  17
+   MODULO :  18
+
+Reductions:
+   SEMICOLON :  6
+   MINUS :  6
+   COMMA :  6
+   PLUS :  6
+   RPAR :  6
+
+
+state 29:
+   Arguments =>  Arguments # COMMA E  /  { COMMA, RPAR }
+   H =>  IDENTIFIER LPAR Arguments # RPAR  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Shifts:
+   RPAR :  39
+   COMMA :  38
+
+
+state 30:
+   E =>  E # PLUS F  /  { COMMA, MINUS, PLUS, RPAR }
+   E =>  E # MINUS F  /  { COMMA, MINUS, PLUS, RPAR }
+   Arguments =>  E #  /  { COMMA, RPAR }
+
+Shifts:
+   MINUS :  13
+   PLUS :  12
+
+Reductions:
+   RPAR :  21
+   COMMA :  21
+
+
+state 31:
+   H =>  LPAR E RPAR #  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Reductions:
+   MODULO :  17
+   FACTORIAL :  17
+   MINUS :  17
+   COMMA :  17
+   DIVIDES :  17
+   TIMES :  17
+   RPAR :  17
+   SEMICOLON :  17
+   PLUS :  17
+
+
+state 32:
+   F =>  F TIMES G #  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Reductions:
+   SEMICOLON :  8
+   TIMES :  8
+   RPAR :  8
+   DIVIDES :  8
+   MODULO :  8
+   PLUS :  8
+   MINUS :  8
+   COMMA :  8
+
+
+state 33:
+   F =>  F DIVIDES G #  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Reductions:
+   SEMICOLON :  9
+   TIMES :  9
+   RPAR :  9
+   DIVIDES :  9
+   MODULO :  9
+   PLUS :  9
+   MINUS :  9
+   COMMA :  9
+
+
+state 34:
+   F =>  F MODULO G #  /  { COMMA, MINUS, PLUS, MODULO, DIVIDES, RPAR, TIMES, SEMICOLON }
+
+Reductions:
+   SEMICOLON :  10
+   TIMES :  10
+   RPAR :  10
+   DIVIDES :  10
+   MODULO :  10
+   PLUS :  10
+   MINUS :  10
+   COMMA :  10
+
+
+state 35:
+   Command =>  _recover SEMICOLON #  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, BECOMES, TIMES, RPAR, G, EOF, E, PLUS, F, FACTORIAL, DOUBLE, H, COMMA, MINUS }
+
+Reductions:
+   MINUS :  4
+   COMMA :  4
+   H :  4
+   DOUBLE :  4
+   FACTORIAL :  4
+   F :  4
+   PLUS :  4
+   E :  4
+   IDENTIFIER :  4
+   SEMICOLON :  4
+   DIVIDES :  4
+   Command :  4
+   LPAR :  4
+   BECOMES :  4
+   TIMES :  4
+   RPAR :  4
+   EOF :  4
+   G :  4
+   _recover :  4
+   Arguments :  4
+   MODULO :  4
+
+
+state 36:
+   Command =>  IDENTIFIER BECOMES # E SEMICOLON  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, BECOMES, TIMES, RPAR, G, EOF, E, PLUS, F, FACTORIAL, DOUBLE, H, COMMA, MINUS }
+
+Shifts:
+   MINUS :  10
+   H :  9
+   PLUS :  8
+   F :  7
+   E :  40
+   LPAR :  6
+   DOUBLE :  5
+   G :  4
+   IDENTIFIER :  3
+
+
+state 37:
+   Command =>  E SEMICOLON #  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, BECOMES, TIMES, RPAR, G, EOF, E, PLUS, F, FACTORIAL, DOUBLE, H, COMMA, MINUS }
+
+Reductions:
+   MINUS :  2
+   COMMA :  2
+   H :  2
+   DOUBLE :  2
+   FACTORIAL :  2
+   F :  2
+   PLUS :  2
+   E :  2
+   IDENTIFIER :  2
+   SEMICOLON :  2
+   DIVIDES :  2
+   Command :  2
+   LPAR :  2
+   BECOMES :  2
+   TIMES :  2
+   RPAR :  2
+   EOF :  2
+   G :  2
+   _recover :  2
+   Arguments :  2
+   MODULO :  2
+
+
+state 38:
+   Arguments =>  Arguments COMMA # E  /  { COMMA, RPAR }
+
+Shifts:
+   MINUS :  10
+   H :  9
+   PLUS :  8
+   F :  7
+   LPAR :  6
+   DOUBLE :  5
+   G :  4
+   IDENTIFIER :  3
+   E :  41
+
+
+state 39:
+   H =>  IDENTIFIER LPAR Arguments RPAR #  /  { PLUS, SEMICOLON, RPAR, TIMES, DIVIDES, COMMA, MINUS, FACTORIAL, MODULO }
+
+Reductions:
+   MODULO :  20
+   FACTORIAL :  20
+   MINUS :  20
+   COMMA :  20
+   DIVIDES :  20
+   TIMES :  20
+   RPAR :  20
+   SEMICOLON :  20
+   PLUS :  20
+
+
+state 40:
+   Command =>  IDENTIFIER BECOMES E # SEMICOLON  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, BECOMES, TIMES, RPAR, G, EOF, E, PLUS, F, FACTORIAL, DOUBLE, H, COMMA, MINUS }
+   E =>  E # PLUS F  /  { MINUS, PLUS, SEMICOLON }
+   E =>  E # MINUS F  /  { MINUS, PLUS, SEMICOLON }
+
+Shifts:
+   MINUS :  13
+   PLUS :  12
+   SEMICOLON :  42
+
+
+state 41:
+   E =>  E # PLUS F  /  { COMMA, MINUS, PLUS, RPAR }
+   E =>  E # MINUS F  /  { COMMA, MINUS, PLUS, RPAR }
+   Arguments =>  Arguments COMMA E #  /  { COMMA, RPAR }
+
+Shifts:
+   MINUS :  13
+   PLUS :  12
+
+Reductions:
+   RPAR :  22
+   COMMA :  22
+
+
+state 42:
+   Command =>  IDENTIFIER BECOMES E SEMICOLON #  /  { IDENTIFIER, SEMICOLON, DIVIDES, Command, LPAR, _recover, Arguments, MODULO, BECOMES, TIMES, RPAR, G, EOF, E, PLUS, F, FACTORIAL, DOUBLE, H, COMMA, MINUS }
+
+Reductions:
+   MINUS :  3
+   COMMA :  3
+   H :  3
+   DOUBLE :  3
+   FACTORIAL :  3
+   F :  3
+   PLUS :  3
+   E :  3
+   IDENTIFIER :  3
+   SEMICOLON :  3
+   DIVIDES :  3
+   Command :  3
+   LPAR :  3
+   BECOMES :  3
+   TIMES :  3
+   RPAR :  3
+   EOF :  3
+   G :  3
+   _recover :  3
+   Arguments :  3
+   MODULO :  3
+
+
+
+
+self check
+   E =>  DOUBLE #
+   H =>  DOUBLE #
+
+
+   H =>  H # FACTORIAL
+   G =>  H #
+
+
+these states have the same hash value 163139240
+ended self check
+symbol definition will be put in ./symbol.h and ./symbol.cpp
+
+opening file ../idee.x
+parser definition will be put in ./parser.h and ./parser.cpp
+
+state 0
+state 1
+default rule = 1
+state 2
+state 3
+default rule = 18
+state 4
+default rule = 11
+state 5
+lookahead MODULO
+reduction candidates H 
+lookahead FACTORIAL
+reduction candidates H 
+lookahead MINUS
+seqnr = 0
+reduction candidates E H 
+   it did not go great
+lookahead COMMA
+seqnr = 0
+reduction candidates E H 
+   it did not go great
+lookahead DIVIDES
+reduction candidates H 
+lookahead TIMES
+reduction candidates H 
+lookahead RPAR
+seqnr = 0
+reduction candidates E H 
+   it did not go great
+lookahead SEMICOLON
+seqnr = 0
+reduction candidates E H 
+   it did not go great
+lookahead PLUS
+seqnr = 0
+reduction candidates E H 
+   it did not go great
+state 6
+state 7
+default rule = 7
+state 8
+state 9
+default rule = 15
+state 10
+state 11
+state 12
+state 13
+state 14
+state 15
+state 16
+state 17
+state 18
+state 19
+default rule = 19
+state 20
+default rule = 14
+state 21
+default rule = 16
+state 22
+default rule = 13
+state 23
+state 24
+default rule = 0
+state 25
+default rule = 18
+state 26
+state 27
+default rule = 5
+state 28
+default rule = 6
+state 29
+state 30
+default rule = 21
+state 31
+default rule = 17
+state 32
+default rule = 8
+state 33
+default rule = 9
+state 34
+default rule = 10
+state 35
+default rule = 4
+state 36
+state 37
+default rule = 2
+state 38
+state 39
+default rule = 20
+state 40
+state 41
+default rule = 22
+state 42
+default rule = 3
+there are unresolved conflicts:
+   unresolved conflict in state 5 for lookahead { PLUS, SEMICOLON, RPAR, COMMA, MINUS }

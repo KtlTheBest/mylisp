@@ -1,0 +1,88 @@
+
+put examples in text, not in code.
+
+I think it should be possible to supress the header #line in
+action code. Especially for small includes.
+Make the #line directive in C++ output optional.
+(One can just delete it. Write this in the manual.)
+
+Start working on the manual. Started. 
+Write in the manual about infotype.
+
+reimplement hash function so that enumeration order is guaranteed 
+This was obviously a dumb idea. It is not possible. One should simply
+hash bucket wise, and use a commutative hash function inside
+the bucket. For the moment, I check the quality of the hash
+function, and it seems to be fine, so perhaps I will do nothing. 
+
+Redo C-flat in Maphoon.
+It would be good.
+
+The accepting transition should be removed (I think).
+It's better to keep them, because you want to put goto in a subroutine.
+Otherwise, you may have to accept at goto in the subroutine.
+
+look at : https://llvm.org/docs/ProgrammersManual.html#the-twine-class
+
+much better error checking. 
+   Check that
+   all identifiers are well-formed.
+
+Currently, the termination mechanism is not well working.
+It seems that the best way is by assigning to timetosaygoodbye.
+If this works, then the accepting state can be removed.
+Maybe remove function ensurelookahead. I do not know what is
+the best way to exit.
+
+Syntax errors. How do we report them? There is recovery code from
+the previous version. It should be adopted. I think it is done. 
+
+There is no error handling mechanism. What function should be called?
+How should errors in general be handled? I think it is added (may 5th).
+
+Manual needs to be updated.
+
+There are likely problems with the C++ tokens allowed between { }.
+I do not think that all of them are present. Just added a few. 
+
+The parser code will not compile when the symbol has no infotype.
+This must be corrected. (Probably corrected) 
+
+Do a test of the runtime conflict resolution.
+If we pass the test, we can reduce the output.
+
+Why is Maphoon so slow on the Easy grammar? Not sure yet. 
+
+Full test that uses namespaces.
+
+What happens when no input source is specified? Solved. 
+(we create an error, and will not construct the parser.)
+
+Maphoon seems to report too many conflicts in the multimodal.
+
+It should be possible to refuse reductions. I think I will do this
+by having preconditions return signed short, with
+1 : accept
+0 : reject
+-1 : reject the shift, (but not a possible further reduction). 
+Currently, -1 blocks the shift, but not further reductions. 
+
+A nicer syntax for %requires followed by nothing.
+%reduces { } It was done. 
+
+Currently, _cpp seems to forbid #include Is that a good idea?
+
+Replace 'form' by 'formula'. It just irritates me.
+
+In lexer, there must be sorting by minimum in equivalence classes,
+not just move around the zero. 
+
+In lexer, add a filter? This is done. 
+
+The error messages resulting from incorrectly terminated code
+are not nice. Probably improved. 
+
+all kinds of problems with the optional attribute, etc. Deal with that.
+
+have a look at flatmap
+

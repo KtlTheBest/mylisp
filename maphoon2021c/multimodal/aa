@@ -1,0 +1,2505 @@
+tokenizer: filereader( stdin, 0, 0 ) : 
+
+Starting parser:
+symbol class is not nothrow move constructible
+   (this causes loss of efficiency)
+Statestack: S0 
+Symbolstack: 
+€ -> 0
+
+ -> 1
+ -> 0
+€ -> 0
+/ -> 1
+0 -> 0
+€ -> 0
+* -> 1
++ -> 0
+€ -> 0
+* -> 1
++ -> 0
+initial = { Q0, Q1, Q3, Q5, Q16, Q30, Q32, Q37, Q42, Q47, Q53, Q59, Q63, Q70, Q72, Q74, Q76, Q79, Q83, Q86, Q89, Q91, Q93, Q95, Q97, Q99, Q101, Q103, Q104, Q106, Q108, Q111, Q118 }
+error = ERROR
+checking state 0
+set = { Q0, Q1, Q3, Q5, Q16, Q30, Q32, Q37, Q42, Q47, Q53, Q59, Q63, Q70, Q72, Q74, Q76, Q79, Q83, Q86, Q89, Q91, Q93, Q95, Q97, Q99, Q101, Q103, Q104, Q106, Q108, Q111, Q118 }
+borders = { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+classification will be ERROR
+
+checking state 1
+set = { Q104, Q106, Q108, Q109, Q110 }
+borders = { €, 	, 
+, ,  , ! }
+classification will be WHITESPACE
+
+checking state 2
+set = { Q104, Q106, Q107, Q108, Q109, Q110 }
+borders = { €, 	, 
+, ,  , ! }
+classification will be WHITESPACE
+
+checking state 3
+set = { Q104, Q105, Q106, Q107, Q108, Q109, Q110 }
+borders = { €, 	, 
+, ,  , ! }
+classification will be WHITESPACE
+
+checking state 4
+set = { Q17, Q19 }
+borders = { €, A, [, a, { }
+classification will be ERROR
+
+checking state 5
+set = { Q73 }
+borders = { € }
+classification will be AND
+
+checking state 6
+set = { Q90 }
+borders = { € }
+classification will be LEFTPAR
+
+checking state 7
+set = { Q92 }
+borders = { € }
+classification will be RIGHTPAR
+
+checking state 8
+set = { Q77 }
+borders = { €, >, ? }
+classification will be ERROR
+
+checking state 9
+set = { Q112, Q119 }
+borders = { €, *, +, /, 0 }
+classification will be ERROR
+
+checking state 10
+set = { Q31, Q36 }
+borders = { € }
+classification will be NUMBER
+
+checking state 11
+set = { Q33, Q34, Q36 }
+borders = { €, 0, : }
+classification will be NUMBER
+
+checking state 12
+set = { Q2 }
+borders = { € }
+classification will be SEMICOLON
+
+checking state 13
+set = { Q80, Q87, Q98 }
+borders = { €, -, ., >, ? }
+classification will be DIASTART
+
+checking state 14
+set = { Q102 }
+borders = { € }
+classification will be BECOMES
+
+checking state 15
+set = { Q100 }
+borders = { € }
+classification will be DIAEND
+
+checking state 16
+set = { Q6, Q7, Q9, Q11, Q13, Q15 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be ID
+
+checking state 17
+set = { Q6, Q7, Q9, Q11, Q13, Q15, Q48 }
+borders = { €, 0, :, A, B, [, _, `, a, { }
+classification will be ID
+
+checking state 18
+set = { Q6, Q7, Q9, Q11, Q13, Q15, Q60 }
+borders = { €, 0, :, A, N, O, [, _, `, a, { }
+classification will be ID
+
+checking state 19
+set = { Q6, Q7, Q9, Q11, Q13, Q15, Q64 }
+borders = { €, 0, :, A, E, F, [, _, `, a, { }
+classification will be ID
+
+checking state 20
+set = { Q6, Q7, Q9, Q11, Q13, Q15, Q38 }
+borders = { €, 0, :, A, R, S, [, _, `, a, { }
+classification will be ID
+
+checking state 21
+set = { Q84, Q94 }
+borders = { €, ], ^ }
+classification will be BOXSTART
+
+checking state 22
+set = { Q96 }
+borders = { € }
+classification will be BOXEND
+
+checking state 23
+set = { Q4, Q6, Q7, Q9, Q11, Q13, Q15 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be ID
+
+checking state 24
+set = { Q4, Q6, Q7, Q9, Q11, Q13, Q15, Q54 }
+borders = { €, 0, :, A, [, _, `, a, b, { }
+classification will be ID
+
+checking state 25
+set = { Q4, Q6, Q7, Q9, Q11, Q13, Q15, Q43 }
+borders = { €, 0, :, A, [, _, `, a, r, s, { }
+classification will be ID
+
+checking state 26
+set = { Q75 }
+borders = { € }
+classification will be OR
+
+checking state 27
+set = { Q71 }
+borders = { € }
+classification will be NOT
+
+checking state 28
+set = { Q20, Q21, Q23, Q25, Q27, Q29 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be METAVAR
+
+checking state 29
+set = { Q18, Q20, Q21, Q23, Q25, Q27, Q29 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be METAVAR
+
+checking state 30
+set = { Q78 }
+borders = { € }
+classification will be IMP
+
+checking state 31
+set = { Q120, Q121, Q123, Q124, Q125, Q129, Q130, Q131 }
+borders = { €, *, + }
+classification will be ERROR
+
+checking state 32
+set = { Q113, Q114, Q116 }
+borders = { €, 
+,  }
+classification will be ERROR
+
+checking state 33
+set = { Q34, Q35, Q36 }
+borders = { €, 0, : }
+classification will be NUMBER
+
+checking state 34
+set = { Q81 }
+borders = { €, >, ? }
+classification will be ERROR
+
+checking state 35
+set = { Q88 }
+borders = { € }
+classification will be DIA
+
+checking state 36
+set = { Q7, Q9, Q11, Q13, Q14, Q15 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be ID
+
+checking state 37
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be ID
+
+checking state 38
+set = { Q7, Q9, Q11, Q12, Q13, Q14, Q15 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be ID
+
+checking state 39
+set = { Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be ID
+
+checking state 40
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q49 }
+borders = { €, 0, :, A, L, M, [, _, `, a, { }
+classification will be ID
+
+checking state 41
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q61 }
+borders = { €, 0, :, A, F, G, [, _, `, a, { }
+classification will be ID
+
+checking state 42
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q65 }
+borders = { €, 0, :, A, T, U, [, _, `, a, { }
+classification will be ID
+
+checking state 43
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q39 }
+borders = { €, 0, :, A, U, V, [, _, `, a, { }
+classification will be ID
+
+checking state 44
+set = { Q85 }
+borders = { € }
+classification will be BOX
+
+checking state 45
+set = { Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q55 }
+borders = { €, 0, :, A, [, _, `, a, l, m, { }
+classification will be ID
+
+checking state 46
+set = { Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q44 }
+borders = { €, 0, :, A, [, _, `, a, u, v, { }
+classification will be ID
+
+checking state 47
+set = { Q21, Q23, Q25, Q27, Q28, Q29 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be METAVAR
+
+checking state 48
+set = { Q21, Q23, Q24, Q25, Q26, Q27, Q28, Q29 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be METAVAR
+
+checking state 49
+set = { Q21, Q23, Q25, Q26, Q27, Q28, Q29 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be METAVAR
+
+checking state 50
+set = { Q21, Q22, Q23, Q24, Q25, Q26, Q27, Q28, Q29 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be METAVAR
+
+checking state 51
+set = { Q121, Q122, Q123, Q124, Q125, Q129, Q130, Q131 }
+borders = { €, *, + }
+classification will be ERROR
+
+checking state 52
+set = { Q125, Q126, Q127, Q131, Q132, Q133 }
+borders = { €, *, +, /, 0 }
+classification will be ERROR
+
+checking state 53
+set = { Q114, Q115, Q116 }
+borders = { €, 
+,  }
+classification will be ERROR
+
+checking state 54
+set = { Q117 }
+borders = { € }
+classification will be COMMENT
+
+checking state 55
+set = { Q82 }
+borders = { € }
+classification will be EQUIV
+
+checking state 56
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q50 }
+borders = { €, 0, :, A, S, T, [, _, `, a, { }
+classification will be ID
+
+checking state 57
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q62 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be NNF
+
+checking state 58
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q66 }
+borders = { €, 0, :, A, U, V, [, _, `, a, { }
+classification will be ID
+
+checking state 59
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q40 }
+borders = { €, 0, :, A, E, F, [, _, `, a, { }
+classification will be ID
+
+checking state 60
+set = { Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q56 }
+borders = { €, 0, :, A, [, _, `, a, s, t, { }
+classification will be ID
+
+checking state 61
+set = { Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q45 }
+borders = { €, 0, :, A, [, _, `, a, e, f, { }
+classification will be ID
+
+checking state 62
+set = { Q121, Q123, Q124, Q125, Q128, Q129, Q130, Q131 }
+borders = { €, *, + }
+classification will be ERROR
+
+checking state 63
+set = { Q134 }
+borders = { € }
+classification will be COMMENT
+
+checking state 64
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q51 }
+borders = { €, 0, :, A, E, F, [, _, `, a, { }
+classification will be ID
+
+checking state 65
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q67 }
+borders = { €, 0, :, A, R, S, [, _, `, a, { }
+classification will be ID
+
+checking state 66
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q41, Q46, Q52, Q58 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be CONST
+
+checking state 67
+set = { Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q57 }
+borders = { €, 0, :, A, [, _, `, a, e, f, { }
+classification will be ID
+
+checking state 68
+set = { Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q46, Q52, Q58 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be CONST
+
+checking state 69
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q52, Q58 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be CONST
+
+checking state 70
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q68 }
+borders = { €, 0, :, A, N, O, [, _, `, a, { }
+classification will be ID
+
+checking state 71
+set = { Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q58 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be CONST
+
+checking state 72
+set = { Q7, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q69 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be RETURN
+
+automaton has 73 states
+Back Transitions:
+
+0:   { }
+1:   { Q0, Q1, Q2, Q3 }
+2:   { Q0, Q1, Q2, Q3 }
+3:   { Q0, Q1, Q2, Q3 }
+4:   { Q0 }
+5:   { Q0 }
+6:   { Q0 }
+7:   { Q0 }
+8:   { Q0 }
+9:   { Q0 }
+10:   { Q0 }
+11:   { Q0 }
+12:   { Q0 }
+13:   { Q0 }
+14:   { Q0 }
+15:   { Q0 }
+16:   { Q0 }
+17:   { Q0 }
+18:   { Q0 }
+19:   { Q0 }
+20:   { Q0 }
+21:   { Q0 }
+22:   { Q0 }
+23:   { Q0 }
+24:   { Q0 }
+25:   { Q0 }
+26:   { Q0 }
+27:   { Q0 }
+28:   { Q4 }
+29:   { Q4 }
+30:   { Q8 }
+31:   { Q9 }
+32:   { Q9 }
+33:   { Q11, Q33 }
+34:   { Q13 }
+35:   { Q13 }
+36:   { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+37:   { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+38:   { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+39:   { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+40:   { Q17 }
+41:   { Q18 }
+42:   { Q19 }
+43:   { Q20 }
+44:   { Q21 }
+45:   { Q24 }
+46:   { Q25 }
+47:   { Q28, Q29, Q47, Q48, Q49, Q50 }
+48:   { Q28, Q29, Q47, Q48, Q49, Q50 }
+49:   { Q28, Q29, Q47, Q48, Q49, Q50 }
+50:   { Q28, Q29, Q47, Q48, Q49, Q50 }
+51:   { Q31, Q51, Q62 }
+52:   { Q31, Q51, Q52, Q62 }
+53:   { Q32, Q53 }
+54:   { Q32, Q53 }
+55:   { Q34 }
+56:   { Q40 }
+57:   { Q41 }
+58:   { Q42 }
+59:   { Q43 }
+60:   { Q45 }
+61:   { Q46 }
+62:   { Q52 }
+63:   { Q52 }
+64:   { Q56 }
+65:   { Q58 }
+66:   { Q59 }
+67:   { Q60 }
+68:   { Q61 }
+69:   { Q64 }
+70:   { Q65 }
+71:   { Q67 }
+72:   { Q70 }
+checking 72
+checking 70
+checking 65
+checking 58
+checking 42
+checking 19
+checking 0
+checking 71
+checking 67
+checking 60
+checking 45
+checking 24
+checking 0
+checking 70
+checking 69
+checking 64
+checking 56
+checking 40
+checking 17
+checking 68
+checking 61
+checking 46
+checking 25
+checking 0
+checking 67
+checking 66
+checking 59
+checking 43
+checking 20
+checking 65
+checking 64
+checking 63
+checking 52
+checking 62
+checking 51
+checking 31
+checking 9
+checking 0
+checking 62
+checking 61
+checking 60
+checking 59
+checking 58
+checking 57
+checking 41
+checking 18
+checking 0
+checking 56
+checking 55
+checking 34
+checking 13
+checking 54
+checking 53
+checking 32
+checking 9
+checking 0
+checking 53
+checking 52
+checking 51
+checking 50
+checking 49
+checking 48
+checking 47
+checking 46
+checking 45
+checking 44
+checking 21
+checking 43
+checking 42
+checking 41
+checking 40
+checking 39
+checking 72
+checking 71
+checking 69
+checking 68
+checking 66
+checking 57
+checking 38
+checking 37
+checking 36
+checking 35
+checking 13
+checking 34
+checking 33
+checking 32
+checking 31
+checking 30
+checking 8
+checking 0
+checking 29
+checking 4
+checking 28
+checking 27
+checking 26
+checking 25
+checking 24
+checking 23
+checking 22
+checking 21
+checking 20
+checking 19
+checking 18
+checking 17
+checking 16
+checking 15
+checking 14
+checking 13
+checking 12
+checking 11
+checking 10
+checking 9
+checking 8
+checking 7
+checking 6
+checking 5
+checking 4
+checking 3
+checking 2
+checking 1
+checking 0
+0  ( 2/IMP, 0/ERROR, 3/COMMENT )
+1  ( 0/WHITESPACE )
+2  ( 0/WHITESPACE )
+3  ( 0/WHITESPACE )
+4  ( 0/ERROR, 1/METAVAR )
+5  ( 0/AND )
+6  ( 0/LEFTPAR )
+7  ( 0/RIGHTPAR )
+8  ( 1/IMP, 0/ERROR )
+9  ( 0/ERROR, 2/COMMENT )
+10  ( 0/NUMBER )
+11  ( 0/NUMBER )
+12  ( 0/SEMICOLON )
+13  ( 1/ERROR, 2/EQUIV, 1/DIA )
+14  ( 0/BECOMES )
+15  ( 0/DIAEND )
+16  ( 0/ID )
+17  ( 4/CONST, 0/ID )
+18  ( 2/NNF, 0/ID )
+19  ( 0/ID, 5/RETURN )
+20  ( 3/CONST, 0/ID )
+21  ( 1/BOX, 0/BOXSTART )
+22  ( 0/BOXEND )
+23  ( 0/ID )
+24  ( 4/CONST, 0/ID )
+25  ( 3/CONST, 0/ID )
+26  ( 0/OR )
+27  ( 0/NOT )
+28  ( 0/METAVAR )
+29  ( 0/METAVAR )
+30  ( 0/IMP )
+31  ( 0/ERROR, 2/COMMENT )
+32  ( 0/ERROR, 1/COMMENT )
+33  ( 0/NUMBER )
+34  ( 0/ERROR, 1/EQUIV )
+35  ( 0/DIA )
+36  ( 0/ID )
+37  ( 0/ID )
+38  ( 0/ID )
+39  ( 0/ID )
+40  ( 3/CONST, 0/ID )
+41  ( 1/NNF, 0/ID )
+42  ( 0/ID, 4/RETURN )
+43  ( 2/CONST, 0/ID )
+44  ( 0/BOX )
+45  ( 3/CONST, 0/ID )
+46  ( 2/CONST, 0/ID )
+47  ( 0/METAVAR )
+48  ( 0/METAVAR )
+49  ( 0/METAVAR )
+50  ( 0/METAVAR )
+51  ( 0/ERROR, 2/COMMENT )
+52  ( 0/ERROR, 1/COMMENT )
+53  ( 0/ERROR, 1/COMMENT )
+54  ( 0/COMMENT )
+55  ( 0/EQUIV )
+56  ( 2/CONST, 0/ID )
+57  ( 0/NNF, 1/ID )
+58  ( 0/ID, 3/RETURN )
+59  ( 1/CONST, 0/ID )
+60  ( 2/CONST, 0/ID )
+61  ( 1/CONST, 0/ID )
+62  ( 0/ERROR, 2/COMMENT )
+63  ( 0/COMMENT )
+64  ( 1/CONST, 0/ID )
+65  ( 0/ID, 2/RETURN )
+66  ( 0/CONST, 1/ID )
+67  ( 1/CONST, 0/ID )
+68  ( 0/CONST, 1/ID )
+69  ( 0/CONST, 1/ID )
+70  ( 0/ID, 1/RETURN )
+71  ( 0/CONST, 1/ID )
+72  ( 1/ID, 0/RETURN )
+Initial Partition:
+Equivalence Classes:
+0   : { Q30 }
+1   : { Q54, Q63 }
+2   : { Q7 }
+3   : { Q28, Q29, Q47, Q48, Q49, Q50 }
+4   : { Q27 }
+5   : { Q12 }
+6   : { Q1, Q2, Q3 }
+7   : { Q44 }
+8   : { Q5 }
+9   : { Q10, Q11, Q33 }
+10   : { Q26 }
+11   : { Q55 }
+12   : { Q16, Q23, Q36, Q37, Q38, Q39 }
+13   : { Q35 }
+14   : { Q6 }
+15   : { Q22 }
+16   : { Q15 }
+17   : { Q14 }
+18   : { Q32, Q52, Q53 }
+19   : { Q4 }
+20   : { Q34 }
+21   : { Q9, Q31, Q51, Q62 }
+22   : { Q57 }
+23   : { Q66, Q68, Q69, Q71 }
+24   : { Q70 }
+25   : { Q65 }
+26   : { Q58 }
+27   : { Q42 }
+28   : { Q19 }
+29   : { Q8 }
+30   : { Q41 }
+31   : { Q59, Q61, Q64, Q67 }
+32   : { Q21 }
+33   : { Q72 }
+34   : { Q18 }
+35   : { Q43, Q46, Q56, Q60 }
+36   : { Q20, Q25, Q40, Q45 }
+37   : { Q17, Q24 }
+38   : { Q13 }
+39   : { Q0 }
+
+Index:
+   0 -> 39
+   1 -> 6
+   2 -> 6
+   3 -> 6
+   4 -> 19
+   5 -> 8
+   6 -> 14
+   7 -> 2
+   8 -> 29
+   9 -> 21
+   10 -> 9
+   11 -> 9
+   12 -> 5
+   13 -> 38
+   14 -> 17
+   15 -> 16
+   16 -> 12
+   17 -> 37
+   18 -> 34
+   19 -> 28
+   20 -> 36
+   21 -> 32
+   22 -> 15
+   23 -> 12
+   24 -> 37
+   25 -> 36
+   26 -> 10
+   27 -> 4
+   28 -> 3
+   29 -> 3
+   30 -> 0
+   31 -> 21
+   32 -> 18
+   33 -> 9
+   34 -> 20
+   35 -> 13
+   36 -> 12
+   37 -> 12
+   38 -> 12
+   39 -> 12
+   40 -> 36
+   41 -> 30
+   42 -> 27
+   43 -> 35
+   44 -> 7
+   45 -> 36
+   46 -> 35
+   47 -> 3
+   48 -> 3
+   49 -> 3
+   50 -> 3
+   51 -> 21
+   52 -> 18
+   53 -> 18
+   54 -> 1
+   55 -> 11
+   56 -> 35
+   57 -> 22
+   58 -> 26
+   59 -> 31
+   60 -> 35
+   61 -> 31
+   62 -> 21
+   63 -> 1
+   64 -> 31
+   65 -> 25
+   66 -> 23
+   67 -> 31
+   68 -> 23
+   69 -> 23
+   70 -> 24
+   71 -> 23
+   72 -> 33
+
+
+picked equivalence class #39 = { Q0 }
+set of its predecessors { }
+set of its borders {  }
+picked equivalence class #38 = { Q13 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border <
+results in non-empty { Q0 }
+picked equivalence class #37 = { Q17, Q24 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border F
+results in non-empty { Q0 }
+border f
+results in non-empty { Q0 }
+picked equivalence class #36 = { Q20, Q25, Q40, Q45 }
+set of its predecessors { Q0, Q17, Q24 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, B, F, G, N, O, R, S, T, U, [, \, ], ^, _, `, a, b, f, g, t, u, {, |, }, ~,  }
+border A
+results in non-empty { Q17 }
+filter { Q17 } refines { Q17, Q24 }
+the result is { Q24 } + { Q17 }
+border T
+results in non-empty { Q0 }
+border a
+results in non-empty { Q24 }
+border t
+results in non-empty { Q0 }
+picked equivalence class #40 = { Q17 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border F
+results in non-empty { Q0 }
+picked equivalence class #35 = { Q43, Q46, Q56, Q60 }
+set of its predecessors { Q20, Q25, Q40, Q45 }
+set of its borders { €, 0, :, A, L, M, R, S, [, _, `, a, l, m, r, s, { }
+border L
+results in non-empty { Q40 }
+filter { Q40 } refines { Q20, Q25, Q40, Q45 }
+the result is { Q20, Q25, Q45 } + { Q40 }
+border R
+results in non-empty { Q20 }
+filter { Q20 } refines { Q20, Q25, Q45 }
+the result is { Q25, Q45 } + { Q20 }
+border l
+results in non-empty { Q45 }
+filter { Q45 } refines { Q25, Q45 }
+the result is { Q25 } + { Q45 }
+border r
+results in non-empty { Q25 }
+picked equivalence class #43 = { Q45 }
+set of its predecessors { Q24 }
+set of its borders { €, 0, :, A, [, _, `, a, b, { }
+border a
+results in non-empty { Q24 }
+picked equivalence class #42 = { Q20 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border T
+results in non-empty { Q0 }
+picked equivalence class #41 = { Q40 }
+set of its predecessors { Q17 }
+set of its borders { €, 0, :, A, B, [, _, `, a, { }
+border A
+results in non-empty { Q17 }
+picked equivalence class #34 = { Q18 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border N
+results in non-empty { Q0 }
+picked equivalence class #33 = { Q72 }
+set of its predecessors { Q70 }
+set of its borders { €, 0, :, A, N, O, [, _, `, a, { }
+border N
+results in non-empty { Q70 }
+picked equivalence class #32 = { Q21 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border [
+results in non-empty { Q0 }
+picked equivalence class #31 = { Q59, Q61, Q64, Q67 }
+set of its predecessors { Q43, Q46, Q56, Q60 }
+set of its borders { €, 0, :, A, S, T, U, V, [, _, `, a, s, t, u, v, { }
+border S
+results in non-empty { Q56 }
+filter { Q56 } refines { Q43, Q46, Q56, Q60 }
+the result is { Q43, Q46, Q60 } + { Q56 }
+border U
+results in non-empty { Q43 }
+filter { Q43 } refines { Q43, Q46, Q60 }
+the result is { Q46, Q60 } + { Q43 }
+border s
+results in non-empty { Q60 }
+filter { Q60 } refines { Q46, Q60 }
+the result is { Q46 } + { Q60 }
+border u
+results in non-empty { Q46 }
+picked equivalence class #46 = { Q60 }
+set of its predecessors { Q45 }
+set of its borders { €, 0, :, A, [, _, `, a, l, m, { }
+border l
+results in non-empty { Q45 }
+picked equivalence class #45 = { Q43 }
+set of its predecessors { Q20 }
+set of its borders { €, 0, :, A, R, S, [, _, `, a, { }
+border R
+results in non-empty { Q20 }
+picked equivalence class #44 = { Q56 }
+set of its predecessors { Q40 }
+set of its borders { €, 0, :, A, L, M, [, _, `, a, { }
+border L
+results in non-empty { Q40 }
+picked equivalence class #30 = { Q41 }
+set of its predecessors { Q18 }
+set of its borders { €, 0, :, A, N, O, [, _, `, a, { }
+border N
+results in non-empty { Q18 }
+picked equivalence class #29 = { Q8 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border -
+results in non-empty { Q0 }
+picked equivalence class #28 = { Q19 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border R
+results in non-empty { Q0 }
+picked equivalence class #27 = { Q42 }
+set of its predecessors { Q19 }
+set of its borders { €, 0, :, A, E, F, [, _, `, a, { }
+border E
+results in non-empty { Q19 }
+picked equivalence class #26 = { Q58 }
+set of its predecessors { Q42 }
+set of its borders { €, 0, :, A, T, U, [, _, `, a, { }
+border T
+results in non-empty { Q42 }
+picked equivalence class #25 = { Q65 }
+set of its predecessors { Q58 }
+set of its borders { €, 0, :, A, U, V, [, _, `, a, { }
+border U
+results in non-empty { Q58 }
+picked equivalence class #24 = { Q70 }
+set of its predecessors { Q65 }
+set of its borders { €, 0, :, A, R, S, [, _, `, a, { }
+border R
+results in non-empty { Q65 }
+picked equivalence class #23 = { Q66, Q68, Q69, Q71 }
+set of its predecessors { Q59, Q61, Q64, Q67 }
+set of its borders { €, 0, :, A, E, F, [, _, `, a, e, f, { }
+border E
+results in non-empty { Q59, Q64 }
+filter { Q59, Q64 } refines { Q59, Q61, Q64, Q67 }
+the result is { Q61, Q67 } + { Q59, Q64 }
+border e
+results in non-empty { Q61, Q67 }
+picked equivalence class #47 = { Q59, Q64 }
+set of its predecessors { Q43, Q56 }
+set of its borders { €, 0, :, A, S, T, U, V, [, _, `, a, { }
+border S
+results in non-empty { Q56 }
+border U
+results in non-empty { Q43 }
+picked equivalence class #22 = { Q57 }
+set of its predecessors { Q41 }
+set of its borders { €, 0, :, A, F, G, [, _, `, a, { }
+border F
+results in non-empty { Q41 }
+picked equivalence class #21 = { Q9, Q31, Q51, Q62 }
+set of its predecessors { Q0, Q9, Q31, Q51, Q52, Q62 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, +, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border €
+results in non-empty { Q31, Q51, Q52, Q62 }
+filter { Q31, Q51, Q52, Q62 } refines { Q9, Q31, Q51, Q62 }
+the result is { Q31, Q51, Q62 } + { Q9 }
+filter { Q31, Q51, Q52, Q62 } refines { Q32, Q52, Q53 }
+the result is { Q32, Q53 } + { Q52 }
+border 	
+results in non-empty { Q31, Q51, Q52, Q62 }
+border 
+
+results in non-empty { Q31, Q51, Q52, Q62 }
+border 
+results in non-empty { Q31, Q51, Q52, Q62 }
+border  
+results in non-empty { Q31, Q51, Q52, Q62 }
+border !
+results in non-empty { Q31, Q51, Q52, Q62 }
+border $
+results in non-empty { Q31, Q51, Q52, Q62 }
+border %
+results in non-empty { Q31, Q51, Q52, Q62 }
+border &
+results in non-empty { Q31, Q51, Q52, Q62 }
+border '
+results in non-empty { Q31, Q51, Q52, Q62 }
+border (
+results in non-empty { Q31, Q51, Q52, Q62 }
+border )
+results in non-empty { Q31, Q51, Q52, Q62 }
+border *
+results in non-empty { Q9 }
+border +
+results in non-empty { Q31, Q51, Q52, Q62 }
+border -
+results in non-empty { Q31, Q51, Q52, Q62 }
+border .
+results in non-empty { Q31, Q51, Q52, Q62 }
+border /
+results in non-empty { Q31, Q51, Q62 }
+border 0
+results in non-empty { Q31, Q51, Q52, Q62 }
+border 1
+results in non-empty { Q31, Q51, Q52, Q62 }
+border :
+results in non-empty { Q31, Q51, Q52, Q62 }
+border ;
+results in non-empty { Q31, Q51, Q52, Q62 }
+border <
+results in non-empty { Q31, Q51, Q52, Q62 }
+border =
+results in non-empty { Q31, Q51, Q52, Q62 }
+border >
+results in non-empty { Q31, Q51, Q52, Q62 }
+border ?
+results in non-empty { Q31, Q51, Q52, Q62 }
+border A
+results in non-empty { Q31, Q51, Q52, Q62 }
+border F
+results in non-empty { Q31, Q51, Q52, Q62 }
+border G
+results in non-empty { Q31, Q51, Q52, Q62 }
+border N
+results in non-empty { Q31, Q51, Q52, Q62 }
+border O
+results in non-empty { Q31, Q51, Q52, Q62 }
+border R
+results in non-empty { Q31, Q51, Q52, Q62 }
+border S
+results in non-empty { Q31, Q51, Q52, Q62 }
+border T
+results in non-empty { Q31, Q51, Q52, Q62 }
+border U
+results in non-empty { Q31, Q51, Q52, Q62 }
+border [
+results in non-empty { Q31, Q51, Q52, Q62 }
+border \
+results in non-empty { Q31, Q51, Q52, Q62 }
+border ]
+results in non-empty { Q31, Q51, Q52, Q62 }
+border ^
+results in non-empty { Q31, Q51, Q52, Q62 }
+border a
+results in non-empty { Q31, Q51, Q52, Q62 }
+border f
+results in non-empty { Q31, Q51, Q52, Q62 }
+border g
+results in non-empty { Q31, Q51, Q52, Q62 }
+border t
+results in non-empty { Q31, Q51, Q52, Q62 }
+border u
+results in non-empty { Q31, Q51, Q52, Q62 }
+border {
+results in non-empty { Q31, Q51, Q52, Q62 }
+border |
+results in non-empty { Q31, Q51, Q52, Q62 }
+border }
+results in non-empty { Q31, Q51, Q52, Q62 }
+border ~
+results in non-empty { Q31, Q51, Q52, Q62 }
+border 
+results in non-empty { Q31, Q51, Q52, Q62 }
+picked equivalence class #49 = { Q52 }
+set of its predecessors { Q31, Q51, Q52, Q62 }
+set of its borders { €, *, +, /, 0 }
+border *
+results in non-empty { Q31, Q51, Q52, Q62 }
+picked equivalence class #48 = { Q9 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border /
+results in non-empty { Q0 }
+picked equivalence class #20 = { Q34 }
+set of its predecessors { Q13 }
+set of its borders { €, -, ., >, ? }
+border -
+results in non-empty { Q13 }
+picked equivalence class #19 = { Q4 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border $
+results in non-empty { Q0 }
+picked equivalence class #18 = { Q32, Q53 }
+set of its predecessors { Q9, Q32, Q53 }
+set of its borders { €, 
+, , *, +, /, 0 }
+border €
+results in non-empty { Q32, Q53 }
+border 
+results in non-empty { Q32, Q53 }
+border *
+results in non-empty { Q32, Q53 }
+border +
+results in non-empty { Q32, Q53 }
+border /
+results in non-empty { Q9, Q32, Q53 }
+border 0
+results in non-empty { Q32, Q53 }
+picked equivalence class #17 = { Q14 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border =
+results in non-empty { Q0 }
+picked equivalence class #16 = { Q15 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border >
+results in non-empty { Q0 }
+picked equivalence class #15 = { Q22 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border ]
+results in non-empty { Q0 }
+picked equivalence class #14 = { Q6 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border (
+results in non-empty { Q0 }
+picked equivalence class #13 = { Q35 }
+set of its predecessors { Q13 }
+set of its borders { €, -, ., >, ? }
+border >
+results in non-empty { Q13 }
+picked equivalence class #12 = { Q16, Q23, Q36, Q37, Q38, Q39 }
+set of its predecessors { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, B, E, F, G, L, M, N, O, R, S, T, U, V, [, \, ], ^, _, `, a, b, e, f, g, l, m, r, s, t, u, v, {, |, }, ~,  }
+border 0
+results in non-empty { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border 1
+results in non-empty { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border A
+results in non-empty { Q0, Q16, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border B
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border E
+results in non-empty { Q0, Q16, Q17, Q18, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q60, Q61, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border F
+results in non-empty { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border G
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border L
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border M
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border N
+results in non-empty { Q16, Q17, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q71, Q72 }
+border O
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border R
+results in non-empty { Q16, Q17, Q18, Q19, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border S
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border T
+results in non-empty { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border U
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q45, Q46, Q56, Q57, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border V
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border _
+results in non-empty { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border a
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border b
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border e
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q64, Q65, Q66, Q68, Q69, Q70, Q71, Q72 }
+border f
+results in non-empty { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border g
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border l
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border m
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border r
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border s
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border t
+results in non-empty { Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border u
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+border v
+results in non-empty { Q0, Q16, Q17, Q18, Q19, Q20, Q23, Q24, Q25, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q45, Q46, Q56, Q57, Q58, Q59, Q60, Q61, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72 }
+picked equivalence class #11 = { Q55 }
+set of its predecessors { Q34 }
+set of its borders { €, >, ? }
+border >
+results in non-empty { Q34 }
+picked equivalence class #10 = { Q26 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border |
+results in non-empty { Q0 }
+picked equivalence class #9 = { Q10, Q11, Q33 }
+set of its predecessors { Q0, Q11, Q33 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border 0
+results in non-empty { Q0, Q11, Q33 }
+filter { Q0, Q11, Q33 } refines { Q10, Q11, Q33 }
+the result is { Q11, Q33 } + { Q10 }
+border 1
+results in non-empty { Q0, Q11, Q33 }
+picked equivalence class #50 = { Q10 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border 0
+results in non-empty { Q0 }
+picked equivalence class #8 = { Q5 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border &
+results in non-empty { Q0 }
+picked equivalence class #7 = { Q44 }
+set of its predecessors { Q21 }
+set of its borders { €, ], ^ }
+border ]
+results in non-empty { Q21 }
+picked equivalence class #6 = { Q1, Q2, Q3 }
+set of its predecessors { Q0, Q1, Q2, Q3 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border 	
+results in non-empty { Q0, Q1, Q2, Q3 }
+border 
+
+results in non-empty { Q0, Q1, Q2, Q3 }
+border  
+results in non-empty { Q0, Q1, Q2, Q3 }
+picked equivalence class #5 = { Q12 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border ;
+results in non-empty { Q0 }
+picked equivalence class #4 = { Q27 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border ~
+results in non-empty { Q0 }
+picked equivalence class #3 = { Q28, Q29, Q47, Q48, Q49, Q50 }
+set of its predecessors { Q4, Q28, Q29, Q47, Q48, Q49, Q50 }
+set of its borders { €, 0, :, A, [, _, `, a, { }
+border 0
+results in non-empty { Q28, Q29, Q47, Q48, Q49, Q50 }
+border A
+results in non-empty { Q4, Q28, Q29, Q47, Q48, Q49, Q50 }
+border _
+results in non-empty { Q28, Q29, Q47, Q48, Q49, Q50 }
+border a
+results in non-empty { Q4, Q28, Q29, Q47, Q48, Q49, Q50 }
+picked equivalence class #2 = { Q7 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, 
+, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border )
+results in non-empty { Q0 }
+picked equivalence class #1 = { Q54, Q63 }
+set of its predecessors { Q32, Q52, Q53 }
+set of its borders { €, 
+, , *, +, /, 0 }
+border 
+
+results in non-empty { Q32, Q53 }
+border /
+results in non-empty { Q52 }
+picked equivalence class #0 = { Q30 }
+set of its predecessors { Q8 }
+set of its borders { €, >, ? }
+border >
+results in non-empty { Q8 }
+Final Partition:
+Equivalence Classes:
+0   : { Q30 }
+1   : { Q54, Q63 }
+2   : { Q7 }
+3   : { Q28, Q29, Q47, Q48, Q49, Q50 }
+4   : { Q27 }
+5   : { Q12 }
+6   : { Q1, Q2, Q3 }
+7   : { Q44 }
+8   : { Q5 }
+9   : { Q11, Q33 }
+10   : { Q26 }
+11   : { Q55 }
+12   : { Q16, Q23, Q36, Q37, Q38, Q39 }
+13   : { Q35 }
+14   : { Q6 }
+15   : { Q22 }
+16   : { Q15 }
+17   : { Q14 }
+18   : { Q32, Q53 }
+19   : { Q4 }
+20   : { Q34 }
+21   : { Q31, Q51, Q62 }
+22   : { Q57 }
+23   : { Q66, Q68, Q69, Q71 }
+24   : { Q70 }
+25   : { Q65 }
+26   : { Q58 }
+27   : { Q42 }
+28   : { Q19 }
+29   : { Q8 }
+30   : { Q41 }
+31   : { Q61, Q67 }
+32   : { Q21 }
+33   : { Q72 }
+34   : { Q18 }
+35   : { Q46 }
+36   : { Q25 }
+37   : { Q24 }
+38   : { Q13 }
+39   : { Q0 }
+40   : { Q17 }
+41   : { Q40 }
+42   : { Q20 }
+43   : { Q45 }
+44   : { Q56 }
+45   : { Q43 }
+46   : { Q60 }
+47   : { Q59, Q64 }
+48   : { Q9 }
+49   : { Q52 }
+50   : { Q10 }
+
+Index:
+   0 -> 39
+   1 -> 6
+   2 -> 6
+   3 -> 6
+   4 -> 19
+   5 -> 8
+   6 -> 14
+   7 -> 2
+   8 -> 29
+   9 -> 48
+   10 -> 50
+   11 -> 9
+   12 -> 5
+   13 -> 38
+   14 -> 17
+   15 -> 16
+   16 -> 12
+   17 -> 40
+   18 -> 34
+   19 -> 28
+   20 -> 42
+   21 -> 32
+   22 -> 15
+   23 -> 12
+   24 -> 37
+   25 -> 36
+   26 -> 10
+   27 -> 4
+   28 -> 3
+   29 -> 3
+   30 -> 0
+   31 -> 21
+   32 -> 18
+   33 -> 9
+   34 -> 20
+   35 -> 13
+   36 -> 12
+   37 -> 12
+   38 -> 12
+   39 -> 12
+   40 -> 41
+   41 -> 30
+   42 -> 27
+   43 -> 45
+   44 -> 7
+   45 -> 43
+   46 -> 35
+   47 -> 3
+   48 -> 3
+   49 -> 3
+   50 -> 3
+   51 -> 21
+   52 -> 49
+   53 -> 18
+   54 -> 1
+   55 -> 11
+   56 -> 44
+   57 -> 22
+   58 -> 26
+   59 -> 47
+   60 -> 46
+   61 -> 31
+   62 -> 21
+   63 -> 1
+   64 -> 47
+   65 -> 25
+   66 -> 23
+   67 -> 31
+   68 -> 23
+   69 -> 23
+   70 -> 24
+   71 -> 23
+   72 -> 33
+
+
+after minimization 51
+initial = { Q0 }
+error = ERROR
+checking state 0
+set = { Q0 }
+borders = { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+classification will be ERROR
+
+checking state 1
+set = { Q1 }
+borders = { €, 	, ,  , ! }
+classification will be WHITESPACE
+
+checking state 2
+set = { Q2 }
+borders = { €, A, [, a, { }
+classification will be ERROR
+
+checking state 3
+set = { Q3 }
+borders = { € }
+classification will be AND
+
+checking state 4
+set = { Q4 }
+borders = { € }
+classification will be LEFTPAR
+
+checking state 5
+set = { Q5 }
+borders = { € }
+classification will be RIGHTPAR
+
+checking state 6
+set = { Q6 }
+borders = { €, >, ? }
+classification will be ERROR
+
+checking state 7
+set = { Q7 }
+borders = { €, *, +, /, 0 }
+classification will be ERROR
+
+checking state 8
+set = { Q8 }
+borders = { € }
+classification will be NUMBER
+
+checking state 9
+set = { Q9 }
+borders = { €, 0, : }
+classification will be NUMBER
+
+checking state 10
+set = { Q10 }
+borders = { € }
+classification will be SEMICOLON
+
+checking state 11
+set = { Q11 }
+borders = { €, -, ., >, ? }
+classification will be DIASTART
+
+checking state 12
+set = { Q12 }
+borders = { € }
+classification will be BECOMES
+
+checking state 13
+set = { Q13 }
+borders = { € }
+classification will be DIAEND
+
+checking state 14
+set = { Q14 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be ID
+
+checking state 15
+set = { Q15 }
+borders = { €, 0, :, A, B, [, _, `, a, { }
+classification will be ID
+
+checking state 16
+set = { Q16 }
+borders = { €, 0, :, A, N, O, [, _, `, a, { }
+classification will be ID
+
+checking state 17
+set = { Q17 }
+borders = { €, 0, :, A, E, F, [, _, `, a, { }
+classification will be ID
+
+checking state 18
+set = { Q18 }
+borders = { €, 0, :, A, R, S, [, _, `, a, { }
+classification will be ID
+
+checking state 19
+set = { Q19 }
+borders = { €, ], ^ }
+classification will be BOXSTART
+
+checking state 20
+set = { Q20 }
+borders = { € }
+classification will be BOXEND
+
+checking state 21
+set = { Q21 }
+borders = { €, 0, :, A, [, _, `, a, b, { }
+classification will be ID
+
+checking state 22
+set = { Q22 }
+borders = { €, 0, :, A, [, _, `, a, r, s, { }
+classification will be ID
+
+checking state 23
+set = { Q23 }
+borders = { € }
+classification will be OR
+
+checking state 24
+set = { Q24 }
+borders = { € }
+classification will be NOT
+
+checking state 25
+set = { Q25 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be METAVAR
+
+checking state 26
+set = { Q26 }
+borders = { € }
+classification will be IMP
+
+checking state 27
+set = { Q27 }
+borders = { €, *, + }
+classification will be ERROR
+
+checking state 28
+set = { Q28 }
+borders = { €, 
+,  }
+classification will be ERROR
+
+checking state 29
+set = { Q29 }
+borders = { €, >, ? }
+classification will be ERROR
+
+checking state 30
+set = { Q30 }
+borders = { € }
+classification will be DIA
+
+checking state 31
+set = { Q31 }
+borders = { €, 0, :, A, L, M, [, _, `, a, { }
+classification will be ID
+
+checking state 32
+set = { Q32 }
+borders = { €, 0, :, A, F, G, [, _, `, a, { }
+classification will be ID
+
+checking state 33
+set = { Q33 }
+borders = { €, 0, :, A, T, U, [, _, `, a, { }
+classification will be ID
+
+checking state 34
+set = { Q34 }
+borders = { €, 0, :, A, U, V, [, _, `, a, { }
+classification will be ID
+
+checking state 35
+set = { Q35 }
+borders = { € }
+classification will be BOX
+
+checking state 36
+set = { Q36 }
+borders = { €, 0, :, A, [, _, `, a, l, m, { }
+classification will be ID
+
+checking state 37
+set = { Q37 }
+borders = { €, 0, :, A, [, _, `, a, u, v, { }
+classification will be ID
+
+checking state 38
+set = { Q38 }
+borders = { €, *, +, /, 0 }
+classification will be ERROR
+
+checking state 39
+set = { Q39 }
+borders = { € }
+classification will be COMMENT
+
+checking state 40
+set = { Q40 }
+borders = { € }
+classification will be EQUIV
+
+checking state 41
+set = { Q41 }
+borders = { €, 0, :, A, S, T, [, _, `, a, { }
+classification will be ID
+
+checking state 42
+set = { Q42 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be NNF
+
+checking state 43
+set = { Q43 }
+borders = { €, 0, :, A, U, V, [, _, `, a, { }
+classification will be ID
+
+checking state 44
+set = { Q44 }
+borders = { €, 0, :, A, E, F, [, _, `, a, { }
+classification will be ID
+
+checking state 45
+set = { Q45 }
+borders = { €, 0, :, A, [, _, `, a, s, t, { }
+classification will be ID
+
+checking state 46
+set = { Q46 }
+borders = { €, 0, :, A, [, _, `, a, e, f, { }
+classification will be ID
+
+checking state 47
+set = { Q47 }
+borders = { €, 0, :, A, R, S, [, _, `, a, { }
+classification will be ID
+
+checking state 48
+set = { Q48 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be CONST
+
+checking state 49
+set = { Q49 }
+borders = { €, 0, :, A, N, O, [, _, `, a, { }
+classification will be ID
+
+checking state 50
+set = { Q50 }
+borders = { €, 0, :, A, [, _, `, a, { }
+classification will be RETURN
+
+Back Transitions:
+
+0:   { }
+1:   { Q0, Q1 }
+2:   { Q0 }
+3:   { Q0 }
+4:   { Q0 }
+5:   { Q0 }
+6:   { Q0 }
+7:   { Q0 }
+8:   { Q0 }
+9:   { Q0, Q9 }
+10:   { Q0 }
+11:   { Q0 }
+12:   { Q0 }
+13:   { Q0 }
+14:   { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+15:   { Q0 }
+16:   { Q0 }
+17:   { Q0 }
+18:   { Q0 }
+19:   { Q0 }
+20:   { Q0 }
+21:   { Q0 }
+22:   { Q0 }
+23:   { Q0 }
+24:   { Q0 }
+25:   { Q2, Q25 }
+26:   { Q6 }
+27:   { Q7, Q27, Q38 }
+28:   { Q7, Q28 }
+29:   { Q11 }
+30:   { Q11 }
+31:   { Q15 }
+32:   { Q16 }
+33:   { Q17 }
+34:   { Q18 }
+35:   { Q19 }
+36:   { Q21 }
+37:   { Q22 }
+38:   { Q27, Q38 }
+39:   { Q28, Q38 }
+40:   { Q29 }
+41:   { Q31 }
+42:   { Q32 }
+43:   { Q33 }
+44:   { Q34, Q41 }
+45:   { Q36 }
+46:   { Q37, Q45 }
+47:   { Q43 }
+48:   { Q44, Q46 }
+49:   { Q47 }
+50:   { Q49 }
+checking 50
+checking 49
+checking 47
+checking 43
+checking 33
+checking 17
+checking 0
+checking 49
+checking 48
+checking 46
+checking 45
+checking 36
+checking 21
+checking 0
+checking 37
+checking 22
+checking 0
+checking 44
+checking 41
+checking 31
+checking 15
+checking 34
+checking 18
+checking 47
+checking 46
+checking 45
+checking 44
+checking 43
+checking 42
+checking 32
+checking 16
+checking 0
+checking 41
+checking 40
+checking 29
+checking 11
+checking 39
+checking 38
+checking 27
+checking 7
+checking 0
+checking 28
+checking 7
+checking 0
+checking 38
+checking 37
+checking 36
+checking 35
+checking 19
+checking 34
+checking 33
+checking 32
+checking 31
+checking 30
+checking 11
+checking 29
+checking 28
+checking 27
+checking 26
+checking 6
+checking 0
+checking 25
+checking 2
+checking 24
+checking 23
+checking 22
+checking 21
+checking 20
+checking 19
+checking 18
+checking 17
+checking 16
+checking 15
+checking 14
+checking 50
+checking 48
+checking 42
+checking 13
+checking 12
+checking 11
+checking 10
+checking 9
+checking 8
+checking 7
+checking 6
+checking 5
+checking 4
+checking 3
+checking 2
+checking 1
+checking 0
+0  ( 2/IMP, 0/ERROR, 3/COMMENT )
+1  ( 0/WHITESPACE )
+2  ( 0/ERROR, 1/METAVAR )
+3  ( 0/AND )
+4  ( 0/LEFTPAR )
+5  ( 0/RIGHTPAR )
+6  ( 1/IMP, 0/ERROR )
+7  ( 0/ERROR, 2/COMMENT )
+8  ( 0/NUMBER )
+9  ( 0/NUMBER )
+10  ( 0/SEMICOLON )
+11  ( 1/ERROR, 2/EQUIV, 1/DIA )
+12  ( 0/BECOMES )
+13  ( 0/DIAEND )
+14  ( 0/ID )
+15  ( 4/CONST, 0/ID )
+16  ( 2/NNF, 0/ID )
+17  ( 0/ID, 5/RETURN )
+18  ( 3/CONST, 0/ID )
+19  ( 1/BOX, 0/BOXSTART )
+20  ( 0/BOXEND )
+21  ( 4/CONST, 0/ID )
+22  ( 3/CONST, 0/ID )
+23  ( 0/OR )
+24  ( 0/NOT )
+25  ( 0/METAVAR )
+26  ( 0/IMP )
+27  ( 0/ERROR, 2/COMMENT )
+28  ( 0/ERROR, 1/COMMENT )
+29  ( 0/ERROR, 1/EQUIV )
+30  ( 0/DIA )
+31  ( 3/CONST, 0/ID )
+32  ( 1/NNF, 0/ID )
+33  ( 0/ID, 4/RETURN )
+34  ( 2/CONST, 0/ID )
+35  ( 0/BOX )
+36  ( 3/CONST, 0/ID )
+37  ( 2/CONST, 0/ID )
+38  ( 0/ERROR, 1/COMMENT )
+39  ( 0/COMMENT )
+40  ( 0/EQUIV )
+41  ( 2/CONST, 0/ID )
+42  ( 0/NNF, 1/ID )
+43  ( 0/ID, 3/RETURN )
+44  ( 1/CONST, 0/ID )
+45  ( 2/CONST, 0/ID )
+46  ( 1/CONST, 0/ID )
+47  ( 0/ID, 2/RETURN )
+48  ( 0/CONST, 1/ID )
+49  ( 0/ID, 1/RETURN )
+50  ( 1/ID, 0/RETURN )
+Initial Partition:
+Equivalence Classes:
+0   : { Q26 }
+1   : { Q39 }
+2   : { Q5 }
+3   : { Q25 }
+4   : { Q24 }
+5   : { Q10 }
+6   : { Q1 }
+7   : { Q35 }
+8   : { Q3 }
+9   : { Q8, Q9 }
+10   : { Q23 }
+11   : { Q40 }
+12   : { Q14 }
+13   : { Q30 }
+14   : { Q4 }
+15   : { Q20 }
+16   : { Q13 }
+17   : { Q12 }
+18   : { Q28, Q38 }
+19   : { Q2 }
+20   : { Q29 }
+21   : { Q7, Q27 }
+22   : { Q42 }
+23   : { Q48 }
+24   : { Q49 }
+25   : { Q47 }
+26   : { Q43 }
+27   : { Q33 }
+28   : { Q17 }
+29   : { Q6 }
+30   : { Q32 }
+31   : { Q44, Q46 }
+32   : { Q19 }
+33   : { Q50 }
+34   : { Q16 }
+35   : { Q34, Q37, Q41, Q45 }
+36   : { Q18, Q22, Q31, Q36 }
+37   : { Q15, Q21 }
+38   : { Q11 }
+39   : { Q0 }
+
+Index:
+   0 -> 39
+   1 -> 6
+   2 -> 19
+   3 -> 8
+   4 -> 14
+   5 -> 2
+   6 -> 29
+   7 -> 21
+   8 -> 9
+   9 -> 9
+   10 -> 5
+   11 -> 38
+   12 -> 17
+   13 -> 16
+   14 -> 12
+   15 -> 37
+   16 -> 34
+   17 -> 28
+   18 -> 36
+   19 -> 32
+   20 -> 15
+   21 -> 37
+   22 -> 36
+   23 -> 10
+   24 -> 4
+   25 -> 3
+   26 -> 0
+   27 -> 21
+   28 -> 18
+   29 -> 20
+   30 -> 13
+   31 -> 36
+   32 -> 30
+   33 -> 27
+   34 -> 35
+   35 -> 7
+   36 -> 36
+   37 -> 35
+   38 -> 18
+   39 -> 1
+   40 -> 11
+   41 -> 35
+   42 -> 22
+   43 -> 26
+   44 -> 31
+   45 -> 35
+   46 -> 31
+   47 -> 25
+   48 -> 23
+   49 -> 24
+   50 -> 33
+
+
+picked equivalence class #39 = { Q0 }
+set of its predecessors { }
+set of its borders {  }
+picked equivalence class #38 = { Q11 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border <
+results in non-empty { Q0 }
+picked equivalence class #37 = { Q15, Q21 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border F
+results in non-empty { Q0 }
+border f
+results in non-empty { Q0 }
+picked equivalence class #36 = { Q18, Q22, Q31, Q36 }
+set of its predecessors { Q0, Q15, Q21 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, B, F, G, N, O, R, S, T, U, [, \, ], ^, _, `, a, b, f, g, t, u, {, |, }, ~,  }
+border A
+results in non-empty { Q15 }
+filter { Q15 } refines { Q15, Q21 }
+the result is { Q21 } + { Q15 }
+border T
+results in non-empty { Q0 }
+border a
+results in non-empty { Q21 }
+border t
+results in non-empty { Q0 }
+picked equivalence class #40 = { Q15 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border F
+results in non-empty { Q0 }
+picked equivalence class #35 = { Q34, Q37, Q41, Q45 }
+set of its predecessors { Q18, Q22, Q31, Q36 }
+set of its borders { €, 0, :, A, L, M, R, S, [, _, `, a, l, m, r, s, { }
+border L
+results in non-empty { Q31 }
+filter { Q31 } refines { Q18, Q22, Q31, Q36 }
+the result is { Q18, Q22, Q36 } + { Q31 }
+border R
+results in non-empty { Q18 }
+filter { Q18 } refines { Q18, Q22, Q36 }
+the result is { Q22, Q36 } + { Q18 }
+border l
+results in non-empty { Q36 }
+filter { Q36 } refines { Q22, Q36 }
+the result is { Q22 } + { Q36 }
+border r
+results in non-empty { Q22 }
+picked equivalence class #43 = { Q36 }
+set of its predecessors { Q21 }
+set of its borders { €, 0, :, A, [, _, `, a, b, { }
+border a
+results in non-empty { Q21 }
+picked equivalence class #42 = { Q18 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border T
+results in non-empty { Q0 }
+picked equivalence class #41 = { Q31 }
+set of its predecessors { Q15 }
+set of its borders { €, 0, :, A, B, [, _, `, a, { }
+border A
+results in non-empty { Q15 }
+picked equivalence class #34 = { Q16 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border N
+results in non-empty { Q0 }
+picked equivalence class #33 = { Q50 }
+set of its predecessors { Q49 }
+set of its borders { €, 0, :, A, N, O, [, _, `, a, { }
+border N
+results in non-empty { Q49 }
+picked equivalence class #32 = { Q19 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border [
+results in non-empty { Q0 }
+picked equivalence class #31 = { Q44, Q46 }
+set of its predecessors { Q34, Q37, Q41, Q45 }
+set of its borders { €, 0, :, A, S, T, U, V, [, _, `, a, s, t, u, v, { }
+border S
+results in non-empty { Q41 }
+filter { Q41 } refines { Q34, Q37, Q41, Q45 }
+the result is { Q34, Q37, Q45 } + { Q41 }
+border U
+results in non-empty { Q34 }
+filter { Q34 } refines { Q34, Q37, Q45 }
+the result is { Q37, Q45 } + { Q34 }
+border s
+results in non-empty { Q45 }
+filter { Q45 } refines { Q37, Q45 }
+the result is { Q37 } + { Q45 }
+border u
+results in non-empty { Q37 }
+picked equivalence class #46 = { Q45 }
+set of its predecessors { Q36 }
+set of its borders { €, 0, :, A, [, _, `, a, l, m, { }
+border l
+results in non-empty { Q36 }
+picked equivalence class #45 = { Q34 }
+set of its predecessors { Q18 }
+set of its borders { €, 0, :, A, R, S, [, _, `, a, { }
+border R
+results in non-empty { Q18 }
+picked equivalence class #44 = { Q41 }
+set of its predecessors { Q31 }
+set of its borders { €, 0, :, A, L, M, [, _, `, a, { }
+border L
+results in non-empty { Q31 }
+picked equivalence class #30 = { Q32 }
+set of its predecessors { Q16 }
+set of its borders { €, 0, :, A, N, O, [, _, `, a, { }
+border N
+results in non-empty { Q16 }
+picked equivalence class #29 = { Q6 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border -
+results in non-empty { Q0 }
+picked equivalence class #28 = { Q17 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border R
+results in non-empty { Q0 }
+picked equivalence class #27 = { Q33 }
+set of its predecessors { Q17 }
+set of its borders { €, 0, :, A, E, F, [, _, `, a, { }
+border E
+results in non-empty { Q17 }
+picked equivalence class #26 = { Q43 }
+set of its predecessors { Q33 }
+set of its borders { €, 0, :, A, T, U, [, _, `, a, { }
+border T
+results in non-empty { Q33 }
+picked equivalence class #25 = { Q47 }
+set of its predecessors { Q43 }
+set of its borders { €, 0, :, A, U, V, [, _, `, a, { }
+border U
+results in non-empty { Q43 }
+picked equivalence class #24 = { Q49 }
+set of its predecessors { Q47 }
+set of its borders { €, 0, :, A, R, S, [, _, `, a, { }
+border R
+results in non-empty { Q47 }
+picked equivalence class #23 = { Q48 }
+set of its predecessors { Q44, Q46 }
+set of its borders { €, 0, :, A, E, F, [, _, `, a, e, f, { }
+border E
+results in non-empty { Q44 }
+filter { Q44 } refines { Q44, Q46 }
+the result is { Q46 } + { Q44 }
+border e
+results in non-empty { Q46 }
+picked equivalence class #47 = { Q44 }
+set of its predecessors { Q34, Q41 }
+set of its borders { €, 0, :, A, S, T, U, V, [, _, `, a, { }
+border S
+results in non-empty { Q41 }
+border U
+results in non-empty { Q34 }
+picked equivalence class #22 = { Q42 }
+set of its predecessors { Q32 }
+set of its borders { €, 0, :, A, F, G, [, _, `, a, { }
+border F
+results in non-empty { Q32 }
+picked equivalence class #21 = { Q7, Q27 }
+set of its predecessors { Q0, Q7, Q27, Q38 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, +, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border €
+results in non-empty { Q27, Q38 }
+filter { Q27, Q38 } refines { Q7, Q27 }
+the result is { Q7 } + { Q27 }
+filter { Q27, Q38 } refines { Q28, Q38 }
+the result is { Q28 } + { Q38 }
+border /
+results in non-empty { Q0 }
+picked equivalence class #49 = { Q38 }
+set of its predecessors { Q27, Q38 }
+set of its borders { €, *, +, /, 0 }
+border *
+results in non-empty { Q27, Q38 }
+picked equivalence class #48 = { Q27 }
+set of its predecessors { Q7, Q27, Q38 }
+set of its borders { €, *, +, /, 0 }
+border €
+results in non-empty { Q27, Q38 }
+border *
+results in non-empty { Q7 }
+border +
+results in non-empty { Q27, Q38 }
+border /
+results in non-empty { Q27 }
+border 0
+results in non-empty { Q27, Q38 }
+picked equivalence class #20 = { Q29 }
+set of its predecessors { Q11 }
+set of its borders { €, -, ., >, ? }
+border -
+results in non-empty { Q11 }
+picked equivalence class #19 = { Q2 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border $
+results in non-empty { Q0 }
+picked equivalence class #18 = { Q28 }
+set of its predecessors { Q7, Q28 }
+set of its borders { €, 
+, , *, +, /, 0 }
+border €
+results in non-empty { Q28 }
+border 
+results in non-empty { Q28 }
+border *
+results in non-empty { Q28 }
+border +
+results in non-empty { Q28 }
+border /
+results in non-empty { Q7, Q28 }
+border 0
+results in non-empty { Q28 }
+picked equivalence class #17 = { Q12 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border =
+results in non-empty { Q0 }
+picked equivalence class #16 = { Q13 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border >
+results in non-empty { Q0 }
+picked equivalence class #15 = { Q20 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border ]
+results in non-empty { Q0 }
+picked equivalence class #14 = { Q4 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border (
+results in non-empty { Q0 }
+picked equivalence class #13 = { Q30 }
+set of its predecessors { Q11 }
+set of its borders { €, -, ., >, ? }
+border >
+results in non-empty { Q11 }
+picked equivalence class #12 = { Q14 }
+set of its predecessors { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, B, E, F, G, L, M, N, O, R, S, T, U, V, [, \, ], ^, _, `, a, b, e, f, g, l, m, r, s, t, u, v, {, |, }, ~,  }
+border 0
+results in non-empty { Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border 1
+results in non-empty { Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border A
+results in non-empty { Q0, Q14, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border B
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border E
+results in non-empty { Q0, Q14, Q15, Q16, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q45, Q46, Q47, Q48, Q49, Q50 }
+border F
+results in non-empty { Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border G
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border L
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border M
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border N
+results in non-empty { Q14, Q15, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q50 }
+border O
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border R
+results in non-empty { Q14, Q15, Q16, Q17, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q48, Q49, Q50 }
+border S
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border T
+results in non-empty { Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border U
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q36, Q37, Q41, Q42, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border V
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border _
+results in non-empty { Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border a
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border b
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border e
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q47, Q48, Q49, Q50 }
+border f
+results in non-empty { Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border g
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border l
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border m
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border r
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border s
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q46, Q47, Q48, Q49, Q50 }
+border t
+results in non-empty { Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border u
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+border v
+results in non-empty { Q0, Q14, Q15, Q16, Q17, Q18, Q21, Q22, Q31, Q32, Q33, Q34, Q36, Q37, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 }
+picked equivalence class #11 = { Q40 }
+set of its predecessors { Q29 }
+set of its borders { €, >, ? }
+border >
+results in non-empty { Q29 }
+picked equivalence class #10 = { Q23 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border |
+results in non-empty { Q0 }
+picked equivalence class #9 = { Q8, Q9 }
+set of its predecessors { Q0, Q9 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border 0
+results in non-empty { Q0, Q9 }
+filter { Q0, Q9 } refines { Q8, Q9 }
+the result is { Q8 } + { Q9 }
+picked equivalence class #50 = { Q9 }
+set of its predecessors { Q0, Q9 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border 0
+results in non-empty { Q9 }
+border 1
+results in non-empty { Q0, Q9 }
+picked equivalence class #8 = { Q3 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border &
+results in non-empty { Q0 }
+picked equivalence class #7 = { Q35 }
+set of its predecessors { Q19 }
+set of its borders { €, ], ^ }
+border ]
+results in non-empty { Q19 }
+picked equivalence class #6 = { Q1 }
+set of its predecessors { Q0, Q1 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border 	
+results in non-empty { Q0, Q1 }
+border  
+results in non-empty { Q0, Q1 }
+picked equivalence class #5 = { Q10 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border ;
+results in non-empty { Q0 }
+picked equivalence class #4 = { Q24 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border ~
+results in non-empty { Q0 }
+picked equivalence class #3 = { Q25 }
+set of its predecessors { Q2, Q25 }
+set of its borders { €, 0, :, A, [, _, `, a, { }
+border 0
+results in non-empty { Q25 }
+border A
+results in non-empty { Q2, Q25 }
+border _
+results in non-empty { Q25 }
+border a
+results in non-empty { Q2, Q25 }
+picked equivalence class #2 = { Q5 }
+set of its predecessors { Q0 }
+set of its borders { €, 	, ,  , !, $, %, &, ', (, ), *, -, ., /, 0, 1, :, ;, <, =, >, ?, A, F, G, N, O, R, S, T, U, [, \, ], ^, a, f, g, t, u, {, |, }, ~,  }
+border )
+results in non-empty { Q0 }
+picked equivalence class #1 = { Q39 }
+set of its predecessors { Q28, Q38 }
+set of its borders { €, 
+, , *, +, /, 0 }
+border 
+
+results in non-empty { Q28 }
+border /
+results in non-empty { Q38 }
+picked equivalence class #0 = { Q26 }
+set of its predecessors { Q6 }
+set of its borders { €, >, ? }
+border >
+results in non-empty { Q6 }
+Final Partition:
+Equivalence Classes:
+0   : { Q26 }
+1   : { Q39 }
+2   : { Q5 }
+3   : { Q25 }
+4   : { Q24 }
+5   : { Q10 }
+6   : { Q1 }
+7   : { Q35 }
+8   : { Q3 }
+9   : { Q8 }
+10   : { Q23 }
+11   : { Q40 }
+12   : { Q14 }
+13   : { Q30 }
+14   : { Q4 }
+15   : { Q20 }
+16   : { Q13 }
+17   : { Q12 }
+18   : { Q28 }
+19   : { Q2 }
+20   : { Q29 }
+21   : { Q7 }
+22   : { Q42 }
+23   : { Q48 }
+24   : { Q49 }
+25   : { Q47 }
+26   : { Q43 }
+27   : { Q33 }
+28   : { Q17 }
+29   : { Q6 }
+30   : { Q32 }
+31   : { Q46 }
+32   : { Q19 }
+33   : { Q50 }
+34   : { Q16 }
+35   : { Q37 }
+36   : { Q22 }
+37   : { Q21 }
+38   : { Q11 }
+39   : { Q0 }
+40   : { Q15 }
+41   : { Q31 }
+42   : { Q18 }
+43   : { Q36 }
+44   : { Q41 }
+45   : { Q34 }
+46   : { Q45 }
+47   : { Q44 }
+48   : { Q27 }
+49   : { Q38 }
+50   : { Q9 }
+
+Index:
+   0 -> 39
+   1 -> 6
+   2 -> 19
+   3 -> 8
+   4 -> 14
+   5 -> 2
+   6 -> 29
+   7 -> 21
+   8 -> 9
+   9 -> 50
+   10 -> 5
+   11 -> 38
+   12 -> 17
+   13 -> 16
+   14 -> 12
+   15 -> 40
+   16 -> 34
+   17 -> 28
+   18 -> 42
+   19 -> 32
+   20 -> 15
+   21 -> 37
+   22 -> 36
+   23 -> 10
+   24 -> 4
+   25 -> 3
+   26 -> 0
+   27 -> 48
+   28 -> 18
+   29 -> 20
+   30 -> 13
+   31 -> 41
+   32 -> 30
+   33 -> 27
+   34 -> 45
+   35 -> 7
+   36 -> 43
+   37 -> 35
+   38 -> 49
+   39 -> 1
+   40 -> 11
+   41 -> 44
+   42 -> 22
+   43 -> 26
+   44 -> 47
+   45 -> 46
+   46 -> 31
+   47 -> 25
+   48 -> 23
+   49 -> 24
+   50 -> 33
+
+
+read and classify
+popping 0 state/symbol from stack and reducing into Session
+Statestack: S0 S1 
+Symbolstack: sym_Session()  
+shifting S16
+Statestack: S0 S1 S16 
+Symbolstack: sym_Session()  sym_ID(d)  
+popping 1 state/symbol from stack and reducing into Var
+Statestack: S0 S1 S9 
+Symbolstack: sym_Session()  sym_Var(d)  
+popping 1 state/symbol from stack and reducing into Formula
+Statestack: S0 S1 S14 
+Symbolstack: sym_Session()  sym_Formula(d)  
+read and classify
+read and classify
+this looks like a new syntax error
+trying to recover
+patience remaining = 6
+{ 1/4 }
+lookahead = sym_ID(d)
+not yet recovered, patience = 6
+read and classify
+read and classify
+not yet recovered, patience = 5
+read and classify
+read and classify
+not yet recovered, patience = 4
+read and classify
+read and classify
+not yet recovered, patience = 3
+read and classify
+read and classify
+not yet recovered, patience = 2
+read and classify
+read and classify
+not yet recovered, patience = 1
+read and classify
+read and classify
+recovery ran out of patience
+sym_ID(d)
+parser returned sym_ID(d)

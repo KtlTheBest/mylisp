@@ -1,0 +1,9 @@
+
+calculator
+
+calculator.cpp
+symbol.cpp
+tokenizing.cpp
+parser.cpp
+../filereader.cpp
+
