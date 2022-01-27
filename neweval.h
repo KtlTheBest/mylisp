@@ -7,6 +7,7 @@
 
 namespace neweval {
 
+
 using storage = std::map< std::string, list::list >;
 
 struct context {
@@ -37,12 +38,14 @@ list::list eval_primitives( list::list &prim ){
   return list::list( new list::nil() );
 }
 
-list::list get_atom_val( std::string atomname ){
-  static std::map< std::string, list::list > values_map;
-
-  if( values_map. find( atomname ) != values_map. end() ){
-    return values_map[ atomname ];
-  } else {
+list::list get_atom_val( std::string atomname, context ctx ){
+  if( ctx. local_vars. find( atomname ) != ctx. local_vars. end() ){
+    return ctx. local_vars[ atomname ] -> copy();
+  } else
+  if( ctx. global_vars. find( atomname ) != ctx. global_vars. end() ){
+    return ctx. global_vars[ atomname ] -> copy();
+  }
+  else {
     return list::list( new list::nil() );
   }
 }
@@ -81,7 +84,7 @@ double numeric_action( double a, double b, std::string op ){
   return 0;
 }
 
-list::list eval( list::list &cur_list, context &ctx ) {
+list::list eval( list::list cur_list, context &ctx ) {
 
   if( auto cast = cur_list. try_cast< list::nil >(); cast != nullptr ){
     return cur_list;
@@ -94,27 +97,29 @@ list::list eval( list::list &cur_list, context &ctx ) {
     return cur_list;
   }
   if( auto cast = cur_list. try_cast< list::atom >(); cast != nullptr ){
-    return get_atom_val( cast -> getstring() );
+    return get_atom_val( cast -> getstring(), ctx );
   }
 
-  list::cons cons = *( cur_list. try_cast< list::cons >() );
+  auto cons = cur_list. try_cast< list::cons >();
 
-  auto command = cons. first;
+  auto command = cons -> first;
   if( auto cast = command. try_cast< list::cons >(); cast != nullptr ){
+    auto new_cons = list::list( new list::nil() );
+    auto moving_head = new_cons;
     auto cur = cur_list;
-    list::list res;
-    std::vector< list::list > vec;
+
     while( cur. try_cast< list::nil >() == nullptr ){
+      moving_head. try_cast< list::cons >() -> rest = list::list( new list::cons( list::list( new list::nil() ), list::list( new list::nil() ) ) );
       auto cur_cast = cur. try_cast< list::cons >();
-      res = eval( cur_cast -> first, ctx );
-      vec. push_back( res );
+      auto res = eval( cur_cast -> first, ctx );
+      moving_head. try_cast< list::cons >() -> first = res;
       cur = cur_cast -> rest;
     }
 
-    return res;
+    return eval( new_cons, ctx );
   }
   if( auto cast = command. try_cast< list::atom >(); cast != nullptr ){
-    auto target_list = cons. rest;
+    auto target_list = cons -> rest;
     auto command_name = cast -> getstring();
     if( command_name == "PROGN" ){
       list::list res;
@@ -159,13 +164,23 @@ list::list eval( list::list &cur_list, context &ctx ) {
     if( command_name == "DEFUN" ){
       auto list_cast = target_list. try_cast< list::cons >();
       auto funcname  = list_cast -> first; list_cast = list_cast -> rest. try_cast< list::cons >();
-      auto arguments = list_cast -> first; list_cast = list_cast -> rest. try_cast< list::cons >();
-      auto body      = list_cast -> first;
+      auto arguments = list_cast -> first;
+      auto body      = list_cast -> rest;
       auto funcname_str = funcname. try_cast< list::atom >() -> getstring();
       
-      ctx. funcs[ funcname_str ] = list::list( new list::cons( arguments, body ) );
-      std::cout << "DEBUG: " << body << '\n';
-      std::cout << "DEBUG: " << ctx. funcs. size() << '\n';
+      ctx. funcs[ funcname_str ] = 
+        list::list( 
+          new list::cons( arguments, 
+            list::list( 
+              new list::cons( 
+                list::list( 
+                  new list::atom( "PROGN" ) 
+                ), 
+                body 
+              )
+            )
+          )
+        );
       return funcname;
     }
     if( command_name == "IF" ){
@@ -196,7 +211,7 @@ list::list eval( list::list &cur_list, context &ctx ) {
           std::cout << if_cast -> val;
         } else
         if( auto if_cast = temp_res. try_cast< list::atom >(); if_cast != nullptr ){
-          auto val = get_atom_val( if_cast -> getstring() );
+          auto val = get_atom_val( if_cast -> getstring(), ctx );
           std::cout << val;
         } else {
           std::cout << temp_res;
@@ -213,20 +228,16 @@ list::list eval( list::list &cur_list, context &ctx ) {
         command_name == "-" ||
         command_name == "*" ||
         command_name == "/" ){
-      auto res = list::list( new list::integer( 0 ) );
-      bool isfloat = false;
-      bool isfirst = true;
+      auto list_cast = target_list. try_cast< list::cons >();
+      auto res = eval( list_cast -> first, ctx );
+      bool isfloat = res. try_cast< list::number >() != nullptr;
 
-      auto first_val = list::list( new list::nil() );
-      while( target_list. try_cast< list::nil >() == nullptr ){
+      target_list = list_cast -> rest;
+      
+      while( target_list. try_cast< list::cons >() != nullptr ){
         auto cons_cast = target_list. try_cast< list::cons >();
-        auto elem = cons_cast -> first;
+        auto temp_res = eval( cons_cast -> first, ctx );
         target_list = cons_cast -> rest;
-        auto temp_res = eval( elem, ctx );
-        if( isfirst ){
-          isfirst = false;
-          first_val = temp_res;
-        }
 
         if( auto if_cast = temp_res. try_cast< list::integer >(); if_cast != nullptr ){
 
@@ -253,7 +264,7 @@ list::list eval( list::list &cur_list, context &ctx ) {
         } else
         if( auto if_cast = temp_res. try_cast< list::atom >(); if_cast != nullptr ){
 
-          auto val = get_atom_val( if_cast -> getstring() );
+          auto val = get_atom_val( if_cast -> getstring(), ctx );
           if( auto atom_num_cast = val. try_cast< list::number >(); atom_num_cast != nullptr ){
             auto res_cast = res.try_cast< list::number >();
             res_cast -> val = numeric_action( res_cast -> val, atom_num_cast -> val, command_name );
@@ -265,25 +276,6 @@ list::list eval( list::list &cur_list, context &ctx ) {
         }
       }
 
-      if( command_name == "-" ){
-        if( isfloat ){
-          auto res_cast = res. try_cast< list::number >();
-          if( auto try_cast = first_val. try_cast< list::integer >(); try_cast != nullptr ){
-            res_cast -> val += try_cast -> val. approximation();
-            res_cast -> val += try_cast -> val. approximation();
-          } else 
-          if( auto try_cast = first_val. try_cast< list::number >(); try_cast != nullptr ){
-            res_cast -> val += try_cast -> val;
-            res_cast -> val += try_cast -> val;
-          }
-        } else {
-          auto res_cast = res. try_cast< list::integer >();
-          if( auto try_cast = first_val. try_cast< list::integer >(); try_cast != nullptr ){
-            res_cast -> val += try_cast -> val;
-            res_cast -> val += try_cast -> val;
-          }
-        }
-      }
       return res;
     }
     if( command_name == "=" ){
@@ -342,7 +334,9 @@ list::list eval( list::list &cur_list, context &ctx ) {
         auto sym = l_list_cast -> first. try_cast< list::atom >() -> getstring();
         auto r_list_cast = r. try_cast< list::cons >();
         auto val = eval( r_list_cast -> first, ctx );
-        new_local_vars[ sym ] = val;
+     ;   new_local_vars[ sym ] = val;
+        l = l_list_cast -> rest;
+        r = r_list_cast -> rest;
       }
       new_ctx. local_vars = new_local_vars;
       return eval( body, new_ctx );
