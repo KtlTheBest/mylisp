@@ -19,6 +19,8 @@ namespace list
          auto p = lst. try_cast< number > ( );
          return p && val == p -> val;
       }
+
+      list copy( ){ return list( new number( val ) ); }
  
       void print( std::ostream& out ) const override 
          { out << val; }

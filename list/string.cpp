@@ -34,6 +34,7 @@ namespace
       out << "\\x";
       hexdigit( out, c >> 4 ); hexdigit( out, c);  
    }
+
 }
 
 void list::string::print( std::ostream& out ) const 

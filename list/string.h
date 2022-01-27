@@ -24,6 +24,8 @@ struct string : listbase {
       : s( std::move(s) )
    { }
 
+   list copy( ){ return list( new string( s ) ); }
+
    bool equal_to( const list& lst ) const  
       { auto p = lst. try_cast< string > ( );
         return p && s == p -> s; } 

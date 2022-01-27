@@ -25,6 +25,7 @@ namespace list
 
       virtual bool isnil( ) const { return false; }
       virtual bool iscons( ) const { return false; }
+      virtual list copy( ) = 0;
    };
 
    inline std::ostream& operator << ( std::ostream& out, const listbase& x )

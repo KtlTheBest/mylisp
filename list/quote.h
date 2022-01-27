@@ -27,6 +27,8 @@ struct quote : listbase {
       out << ind << "'\n";
    }
 
+   list copy( ){ return list( new quote( lst ) ); }
+
 };
 
 } 

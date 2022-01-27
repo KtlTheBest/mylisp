@@ -26,6 +26,7 @@ struct nil : listbase {
 
    bool isnil( ) const override { return true; }
 
+   list copy( ){ return list( new nil() ); }
 };
 
 } 

@@ -28,6 +28,8 @@ namespace list
       void prettyprint( std::ostream& out, indentation ) const override;
 
       bool iscons( ) const override { return true; }  
+      
+      list copy( ){ return list( new cons( first -> copy(), rest -> copy() ) ); }
    };
 
 }

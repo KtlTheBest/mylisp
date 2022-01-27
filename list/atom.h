@@ -29,6 +29,8 @@ namespace list
       const std::string& getstring( ) const
          { return *p; }
 
+      list copy( ){ return list( new atom( getstring() ) ); }
+
       bool operator == ( atom at ) const
          { return p == at.p; }
       bool operator != ( atom at ) const

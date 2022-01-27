@@ -52,6 +52,8 @@ struct integer : listbase {
    void prettyprint( std::ostream& out, indentation ind ) const override 
       { out << ind << val << '\n'; } 
 
+   list copy( ){ return list( new integer( val ) ); }
+
    };
 
 }
