@@ -10,7 +10,7 @@ lexing::classifier< char, symboltype > tokenizer::buildclassifier(){
 
   classifier< char, symboltype > tcls( sym_ERROR );
 
-  //auto comment = just( ';' ) * ( every<char>(). without( '\n' ) ).star();
+  auto comment = just( ';' ) * ( every<char>(). without( '\n' ) ).star();
 
   auto alphabetic =   just( '+' )
                     | just( '-' ) 
@@ -32,8 +32,6 @@ lexing::classifier< char, symboltype > tokenizer::buildclassifier(){
   auto digit  = range( '0', '9' );
   auto id     = letter * ( letter | digit | just( '.' ) ). star();
 
-  auto comment = just(';') * every<char>(). without( '\n' );
-
   auto whitespace = just(' ') | just('\n') | just('\t') | just('\r');
 
   auto integer = just('0') | just('-'). optional() * range( '1', '9' ) * digit. star();
@@ -43,7 +41,7 @@ lexing::classifier< char, symboltype > tokenizer::buildclassifier(){
 
   auto strconst = just('"') * every<char>(). without('"'). star() * just('"');
 
-  auto symbolpat = (range( 'a', 'z' ) | range( 'A', 'Z' ) | just( '+' ) | just( '-' ) | just( '*' ) | just( '/' ) | just( '_' ) | just( '>' ) | just( '<' )). plus();
+  auto symbolpat = ( range( 'a', 'z' ) | range( 'A', 'Z' ) | alphabetic ). plus();
 
   tcls. insert( just('('), sym_LPAR );
   tcls. insert( just(')'), sym_RPAR );

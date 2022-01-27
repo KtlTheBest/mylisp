@@ -21,6 +21,7 @@ int main(int argc, char* argv[]){
     return 1;
   }
   if( argc == 1 ){
+    neweval::context ctx;
     while( true ){
 
       std::cout << ">>> ";
@@ -43,7 +44,7 @@ int main(int argc, char* argv[]){
         }
       }
 
-      auto evalres = neweval::eval( ptr );
+      auto evalres = neweval::eval( ptr, ctx );
 
       std::cout << evalres << '\n';
     }
@@ -54,14 +55,13 @@ int main(int argc, char* argv[]){
       
     tokenizer tok( fr, filename );
     parser pr( fr, tok );
-    auto res = pr. parse( sym_S_EXPR );
-    std::cout << res << '\n';
+    neweval::context ctx;
+    while( fr. eof() == false ){
+      auto res = pr. parse( sym_S_EXPR );
+      auto ptr = res.get< list::list >();
 
-    auto ptr = res.get< list::list >();
-
-    auto evalres = neweval::eval( ptr );
-
-    std::cout << "RETURNED: " << evalres << '\n';
+      neweval::eval( ptr, ctx );
+    }
   }
   return 0;
 }
